@@ -21,7 +21,7 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo">
-                <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education—both my own and that of the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry.I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades. I believe these qualities make me a valuable addition to your team.</p>
+                <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself aswell as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry. I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades. I believe these qualities make me a valuable addition to your team.</p>
                 <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller, detailed projects—and I have reliable transportation.</p>
                 <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail through every stage of a project.Thank you for taking the time to view my webpage. I look forward to the opportunity to discuss how I can contribute to the positive and productive environment at your company.</p>
             </div>
@@ -39,7 +39,7 @@
                 <div class="skill-item">Industrial Rigging</div>
                 <div class="skill-item">Field Welding & Repairs</div>
                 <div class="skill-item">Stainless Steel & Aluminum Work</div>
-                <div class="skill-item">Plasma Cutting</div>
+                <div class="skill-item">Plasma and Oxyacetylene Cutting</div>
             </div>
         </div>
     </section>
@@ -50,27 +50,27 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="qo97ekfn31ne1.jpeg" alt="Close-up of a clean weld bead">
-                    <p>Clean weld bead on structural steel. Process: SMAW.</p>
+                    <p>Multipass weld. Process: FCAW</p>
                 </div>
                 <div class="gallery-item">
                     <img src="20220124_085221.jpg" alt="Large steel structure">
-                    <p>Fabrication and erection of a large industrial platform.</p>
+                    <p>Exterior of large Hopper unit</p>
                 </div>
                 <div class="gallery-item">
                     <img src="20160509_094719.jpg" alt="Precision TIG weld on stainless steel piping.">
-                    <p>Precision TIG weld on stainless steel piping.</p>
+                    <p>Precision weld on aluminum frame. Process: GTAW</p>
                 </div>
                 <div class="gallery-item">
                     <img src="20160509_094657.jpg" alt="Installation of heavy-duty support beams for a commercial building.">
-                    <p>Installation of heavy-duty support beams for a commercial building.</p>
+                    <p>Aluminum sled-deck for pickup truck</p>
                 </div>
                 <div class="gallery-item">
                     <img src="20161004_103558.jpg" alt="Custom fabricated metal railing for an architectural project.">
                     <p>Custom fabricated metal railing for an architectural project.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="20160903_120958.jpg" alt="On-site repair of a critical machinery component. Process: FCAW.">
-                    <p>On-site repair of a critical machinery component. Process: FCAW.</p>
+                    <img src="20160701_043528.jpg" alt="Custom staircase in office building">
+                    <p>Custom staircase in office building</p>
                 </div>
             </div>
         </div>
@@ -94,5 +94,45 @@
             <p>&copy; 2025 Jacob Langton-Cooke. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.querySelectorAll(".gallery-item img");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        img.forEach(item => {
+            item.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal content, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
