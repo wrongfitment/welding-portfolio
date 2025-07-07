@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="top-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <header class="hero">
         <div class="hero-content">
             <h1>Jacob Langton-Cooke</h1>
@@ -65,8 +75,8 @@
                     <p>Aluminum sled-deck for pickup truck</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="20161004_103558.jpg" alt="Custom fabricated metal railing for an architectural project.">
-                    <p>Custom fabricated metal railing for an architectural project.</p>
+                    <img src="20161004_103558.jpg" alt="Custom Handrail for upper Mezzanine">
+                    <p>Custom Handrail for upper Mezzanine</p>
                 </div>
                 <div class="gallery-item">
                     <img src="20160701_043528.jpg" alt="Custom staircase in office building">
@@ -133,6 +143,27 @@
                 modal.style.display = "none";
             }
         }
+
+        // Highlight active navigation link on scroll
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll("nav .nav-links li a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((a) => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").includes(current)) {
+                    a.classList.add("active");
+                }
+            });
+        });
     </script>
 </body>
 </html>
