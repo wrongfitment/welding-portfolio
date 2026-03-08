@@ -383,3 +383,25 @@ footer p {
   .skills-grid { grid-template-columns:1fr; }
   .hero h1 { font-size:2.4rem; }
 }
+/* ---------------- ABOUT HOVER / SHADOW ---------------- */
+/* Subtle shadow around profile image */
+.profile-photo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 102, 0, 0.35);
+}
+
+/* Certifications hover already exists, add subtle shadow */
+.cert-tab {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cert-tab:hover {
+  transform: translateX(5px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(255,102,0,0.35);
+  background:#ff6600;
+  color:#1a1a1a;
+}
