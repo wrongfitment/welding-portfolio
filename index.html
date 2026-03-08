@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Langton-Cooke - Welder & Structural Fitter</title>
+    <title>Jacob Langton-Cooke | Welder & Fitter</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav class="top-nav">
         <div class="container">
             <ul class="nav-links">
@@ -55,10 +56,9 @@
 
                 <div class="about-main">
                     <div class="about-content">
-                        <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo">
+                        <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke" class="profile-photo">
                         <div class="about-text">
-                            <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself as well as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry.</p>
-                            <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience. I am fully equipped with my own tools and have reliable transportation.</p>
+                            <p>As a proud Albertan, I take great pride in the quality of work and craftsmanship I bring to the industry. I hold a Red Seal Certification and over five years of hands-on experience in manufacturing and structural steel.</p>
                         </div>
                     </div>
                 </div>
@@ -86,73 +86,53 @@
         <div class="container">
             <h2>Project Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="FCAW Weld"><p>Multipass weld. Process: FCAW</p></div>
+                <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="Multipass FCAW Weld"><p>Multipass weld. Process: FCAW</p></div>
                 <div class="gallery-item"><img src="20220124_085221.jpg" alt="Hopper Unit"><p>Exterior of large Hopper unit</p></div>
-                <div class="gallery-item"><img src="20160509_094719.jpg" alt="TIG Weld"><p>Precision weld on aluminum. Process: GTAW</p></div>
-                <div class="gallery-item"><img src="20160509_094657.jpg" alt="Sled Deck"><p>Aluminum sled-deck for pickup truck</p></div>
-                <div class="gallery-item"><img src="20161004_103558.jpg" alt="Handrail"><p>Custom Handrail for upper Mezzanine</p></div>
-                <div class="gallery-item"><img src="20160701_043528.jpg" alt="Staircase"><p>Custom staircase in office building</p></div>
+                <div class="gallery-item"><img src="20160509_094719.jpg" alt="GTAW Aluminum Weld"><p>Precision aluminum. Process: GTAW</p></div>
+                <div class="gallery-item"><img src="20160509_094657.jpg" alt="Sled Deck"><p>Aluminum sled-deck</p></div>
+                <div class="gallery-item"><img src="20161004_103558.jpg" alt="Custom Handrail"><p>Custom Handrail</p></div>
+                <div class="gallery-item"><img src="20160701_043528.jpg" alt="Custom Staircase"><p>Custom staircase</p></div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section dark-bg">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-box">
-                <p>Email: <a href="mailto:Jacoblangtoncooke@outlook.com">Jacoblangtoncooke@outlook.com</a></p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank">Instagram</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container"><p>&copy; 2026 Jacob Langton-Cooke. All rights reserved.</p></div>
-    </footer>
-
-    <div id="myModal" class="modal">
-        <span class="close" id="closeModal">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="expandedImg">
+        <div id="modalCaption"></div>
     </div>
 
     <script>
-        // Modal logic
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImg");
+        const captionText = document.getElementById("modalCaption");
+        const closeBtn = document.querySelector(".close-btn");
 
-        // Function for Certificates
+        // 1. Logic for Certificate Cards
         function openCertModal(src, caption) {
-            modal.style.display = "flex"; // Changed to flex for centering
+            modal.style.display = "flex";
             modalImg.src = src;
             captionText.innerHTML = caption;
         }
 
-        // Auto-assign click to all Gallery Images
-        document.querySelectorAll('.gallery-item img').forEach(image => {
-            image.onclick = function() {
+        // 2. Logic for Gallery Images
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.onclick = function() {
                 modal.style.display = "flex";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt || "Project Image";
+                captionText.innerHTML = this.alt;
             }
         });
 
-        // Close logic
-        var closeBtn = document.getElementById("closeModal");
-        closeBtn.onclick = function() { 
-            modal.style.display = "none"; 
-        }
-
-        // Close when clicking outside the image
-        window.onclick = function(event) {
-            if (event.target == modal) {
+        // 3. Close Logic
+        closeBtn.onclick = () => modal.style.display = "none";
+        
+        // Close if user clicks outside the image
+        window.onclick = (event) => {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
-        }
+        };
     </script>
 </body>
 </html>
