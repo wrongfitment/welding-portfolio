@@ -33,21 +33,21 @@
             <h2>About Me</h2>
             <div class="about-layout">
                 <aside class="cert-sidebar">
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('repository/redseal.png', 'Red Seal Journeyman Welder Certification')">
+                    <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/redseal.png', 'Red Seal Journeyman Welder Certification')">
                         <div class="cert-icon">🏆</div>
                         <h3>Red Seal Welder</h3>
                         <p>SAIT Polytechnic</p>
                         <span class="view-label">Click to view ticket</span>
                     </div>
 
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('repository/cwb_cert.jpg', 'CWB Certified - All Position FCAW/MCAW')">
+                    <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/cwb_cert.jpg', 'CWB Certified - All Position FCAW/MCAW')">
                         <div class="cert-icon">⚙️</div>
                         <h3>CWB Certified</h3>
                         <p>All Position FCAW/MCAW</p>
                         <span class="view-label">Click to view ticket</span>
                     </div>
 
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('repository/safety_tickets.jpg', 'Safety Tickets: CSTS-09, WHMIS, Fall Protection')">
+                    <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/safety_tickets.jpg', 'Safety Tickets: CSTS-09, WHMIS, Fall Protection')">
                         <div class="cert-icon">🛡️</div>
                         <h3>Safety Tickets</h3>
                         <p>CSTS-09, WHMIS, Fall Pro</p>
@@ -60,8 +60,7 @@
                         <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo">
                         <div class="about-text">
                             <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself aswell as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry. I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades.</p>
-                            <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller, detailed projects—and I have reliable transportation.</p>
-                            <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail through every stage of a project.</p>
+                            <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—and I have reliable transportation.</p>
                         </div>
                     </div>
                 </div>
@@ -89,30 +88,12 @@
         <div class="container">
             <h2>Project Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="qo97ekfn31ne1.jpeg" alt="Close-up of a clean weld bead">
-                    <p>Multipass weld. Process: FCAW</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="20220124_085221.jpg" alt="Large steel structure">
-                    <p>Exterior of large Hopper unit</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="20160509_094719.jpg" alt="Precision TIG weld on aluminum frame">
-                    <p>Precision weld on aluminum frame. Process: GTAW</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="20160509_094657.jpg" alt="Aluminum sled-deck">
-                    <p>Aluminum sled-deck for pickup truck</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="20161004_103558.jpg" alt="Custom Handrail for upper Mezzanine">
-                    <p>Custom Handrail for upper Mezzanine</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="20160701_043528.jpg" alt="Custom staircase in office building">
-                    <p>Custom staircase in office building</p>
-                </div>
+                <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="FCAW Weld"><p>Multipass weld. Process: FCAW</p></div>
+                <div class="gallery-item"><img src="20220124_085221.jpg" alt="Hopper Unit"><p>Exterior of large Hopper unit</p></div>
+                <div class="gallery-item"><img src="20160509_094719.jpg" alt="TIG Weld"><p>Precision weld on aluminum. Process: GTAW</p></div>
+                <div class="gallery-item"><img src="20160509_094657.jpg" alt="Sled Deck"><p>Aluminum sled-deck for pickup truck</p></div>
+                <div class="gallery-item"><img src="20161004_103558.jpg" alt="Handrail"><p>Custom Handrail for upper Mezzanine</p></div>
+                <div class="gallery-item"><img src="20160701_043528.jpg" alt="Staircase"><p>Custom staircase in office building</p></div>
             </div>
         </div>
     </section>
@@ -148,14 +129,12 @@
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
 
-        // Opens the Certificates
         function openCertModal(src, caption) {
             modal.style.display = "block";
             modalImg.src = src;
             captionText.innerHTML = caption;
         }
 
-        // Opens Gallery Images
         var galleryImages = document.querySelectorAll(".gallery-item img");
         galleryImages.forEach(function(img) {
             img.onclick = function(){
@@ -165,32 +144,15 @@
             }
         });
 
-        // Close logic
         var span = document.getElementsByClassName("close")[0];
         span.onclick = function() { modal.style.display = "none"; }
         window.onclick = function(event) {
             if (event.target == modal) { modal.style.display = "none"; }
         }
 
-        // Navbar scroll tracking
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-links a");
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute("id");
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-                if(link.getAttribute("href") === "#" + current){
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                const sectionTop = section.offsetTop - 12
