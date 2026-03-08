@@ -3,9 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Langton-Cooke | Welder & Structural Fitter</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jacob Langton-Cooke | Red Seal Welder & Structural Fitter</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Variables & Reset --- */
+        :root {
+            --primary: #ff6600;
+            --primary-hover: #ff8533;
+            --bg-dark: #1a1a1a;
+            --bg-card: #2a2a2a;
+            --text-main: #f0f0f0;
+            --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- Typography --- */
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
+        h2::after { 
+            content: ''; display: block; width: 50px; height: 4px; 
+            background-color: var(--primary); margin: 15px auto 0; 
+        }
+
+        /* --- Navigation --- */
+        .top-nav { 
+            background-color: rgba(17, 17, 17, 0.85); 
+            backdrop-filter: blur(10px);
+            padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255, 102, 0, 0.1);
+        }
+        .nav-links { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 15px; }
+        .nav-links a { 
+            color: var(--text-main); font-weight: 700; text-transform: uppercase; 
+            font-size: 0.85em; padding: 10px 15px; border-radius: 4px; transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Hero --- */
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('dehyk.jpeg') no-repeat center center/cover;
+            display: flex; justify-content: center; align-items: center; text-align: center; 
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; }
+        .hero .title { font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-top: 10px; }
+        .hero .btn { 
+            display: inline-block; margin-top: 30px; padding: 15px 40px; 
+            background-color: var(--primary); color: #1a1a1a; font-weight: 800; 
+            border-radius: 50px; text-transform: uppercase; transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        }
+        .hero .btn:hover { transform: translateY(-3px); background-color: var(--primary-hover); }
+
+        /* --- About Section --- */
+        .section { padding: 100px 0; }
+        .dark-bg { background-color: #222; }
+        .about-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: start; }
+        
+        .cert-sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .cert-card { 
+            background: var(--bg-card); padding: 20px; border: none; border-radius: 8px;
+            border-left: 4px solid var(--primary); text-align: left; cursor: pointer;
+            transition: var(--transition); color: inherit; width: 100%;
+        }
+        .cert-card:hover { transform: translateX(8px); background: #333; }
+        .cert-card h3 { margin: 0; font-size: 1.1rem; }
+        .cert-card p { margin: 5px 0; font-size: 0.9rem; color: #aaa; }
+        .view-label { font-size: 0.7rem; color: var(--primary); font-weight: bold; text-transform: uppercase; }
+
+        .profile-photo { width: 100%; max-width: 300px; border-radius: 8px; border: 3px solid var(--primary); margin-bottom: 20px; }
+
+        /* --- Skills (2 Rows of 4 Tabs) --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+        }
+        .skill-item {
+            background-color: var(--bg-card);
+            padding: 25px 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+        }
+        .skill-item:hover { transform: translateY(-5px); background-color: #333; }
+
+        /* --- Gallery --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { background: var(--bg-card); border-radius: 8px; overflow: hidden; text-align: center; padding-bottom: 15px; }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; cursor: pointer; transition: 0.3s; }
+        .gallery-item p { font-family: 'Oswald', sans-serif; font-size: 0.9rem; margin-top: 10px; }
+
+        /* --- Modal --- */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center;
+        }
+        .modal-content { max-width: 90%; max-height: 80vh; border: 2px solid var(--primary); }
+        .close-btn { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
+        #modalCaption { color: var(--primary); font-family: 'Oswald', sans-serif; margin-top: 20px; font-size: 1.2rem; }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) { .skills-grid { grid-template-columns: repeat(2, 4fr); } }
+        @media (max-width: 768px) {
+            .about-layout { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+        @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
 
@@ -23,46 +143,36 @@
     <header class="hero">
         <div class="hero-content">
             <h1>Jacob Langton-Cooke</h1>
-            <p class="title">Welder & Structural Fitter</p>
-            <p class="tagline">Precision. Strength. Experience you can trust.</p>
+            <p class="title">Red Seal Welder & Structural Fitter</p>
+            <p>Precision. Strength. Experience you can trust.</p>
             <a href="#gallery" class="btn">View My Work</a>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-layout">
-                <aside class="cert-sidebar">
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/redseal.png', 'Red Seal Journeyman Welder Certification')">
-                        <div class="cert-icon">🏆</div>
-                        <h3>Red Seal Welder</h3>
-                        <p>SAIT Polytechnic</p>
-                        <span class="view-label">Click to view ticket</span>
-                    </div>
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/cwb_cert.jpg', 'CWB Certified - All Position FCAW/MCAW')">
-                        <div class="cert-icon">⚙️</div>
-                        <h3>CWB Certified</h3>
-                        <p>All Position FCAW/MCAW</p>
-                        <span class="view-label">Click to view ticket</span>
-                    </div>
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/safety_tickets.jpg', 'Safety Tickets: CSTS-09, WHMIS, Fall Protection')">
-                        <div class="cert-icon">🛡️</div>
-                        <h3>Safety Tickets</h3>
-                        <p>CSTS-09, WHMIS, Fall Pro</p>
-                        <span class="view-label">Click to view ticket</span>
-                    </div>
-                </aside>
-
-                <div class="about-main">
-                    <div class="about-content">
-                        <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke" class="profile-photo">
-                        <div class="about-text">
-                            <p>As a proud Albertan, I take great pride in the quality of work and craftsmanship I bring to the industry. I hold a Red Seal Certification and over five years of hands-on experience in manufacturing and structural steel.</p>
-                            <p>I am available for full-time work, including nights and weekends, and I bring my own tools and reliable transportation to every job site.</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="about" class="section container">
+        <h2>About Me</h2>
+        <div class="about-layout">
+            <aside class="cert-sidebar">
+                <button class="cert-card" onclick="openModal('./repository/redseal.png', 'Red Seal Journeyman Welder Certification')">
+                    <h3>Red Seal Welder</h3>
+                    <p>SAIT Polytechnic</p>
+                    <span class="view-label">Click to view ticket</span>
+                </button>
+                <button class="cert-card" onclick="openModal('./repository/cwb_cert.jpg', 'CWB Certified - All Position FCAW/MCAW')">
+                    <h3>CWB Certified</h3>
+                    <p>All Position FCAW/MCAW</p>
+                    <span class="view-label">Click to view ticket</span>
+                </button>
+                <button class="cert-card" onclick="openModal('./repository/safety_tickets.jpg', 'Safety Tickets: CSTS-09, WHMIS, Fall Protection')">
+                    <h3>Safety Tickets</h3>
+                    <p>CSTS-09, WHMIS, Fall Pro</p>
+                    <span class="view-label">Click to view ticket</span>
+                </button>
+            </aside>
+            <div class="about-main">
+                <img src="20190924_092819.jpg" alt="Jacob" class="profile-photo">
+                <p>As a proud Albertan, I take great pride in the quality of work and craftsmanship I bring to the industry. I hold a <strong>Red Seal Certification</strong> and over five years of hands-on experience in manufacturing and structural steel.</p>
+                <p>I am available for full-time work, including nights and weekends. I am fully mobile, bringing my own professional tools and reliable transportation to every job site.</p>
             </div>
         </div>
     </section>
@@ -77,47 +187,27 @@
                 <div class="skill-item">Custom Metalwork</div>
                 <div class="skill-item">Industrial Rigging</div>
                 <div class="skill-item">Field Welding & Repairs</div>
-                <div class="skill-item">Stainless Steel & Aluminum Work</div>
-                <div class="skill-item">Plasma and Oxyacetylene Cutting</div>
+                <div class="skill-item">Stainless Steel & Aluminum</div>
+                <div class="skill-item">Plasma & Oxy Cutting</div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2>Project Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="Multipass FCAW Weld"><p>Multipass weld. Process: FCAW</p></div>
-                <div class="gallery-item"><img src="20220124_085221.jpg" alt="Hopper Unit"><p>Exterior of large Hopper unit</p></div>
-                <div class="gallery-item"><img src="20160509_094719.jpg" alt="GTAW Aluminum Weld"><p>Precision aluminum. Process: GTAW</p></div>
-                <div class="gallery-item"><img src="20160509_094657.jpg" alt="Sled Deck"><p>Aluminum sled-deck</p></div>
-                <div class="gallery-item"><img src="20161004_103558.jpg" alt="Custom Handrail"><p>Custom Handrail</p></div>
-                <div class="gallery-item"><img src="20160701_043528.jpg" alt="Custom Staircase"><p>Custom staircase</p></div>
+    <section id="gallery" class="section container">
+        <h2>Project Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="qo97ekfn31ne1.jpeg" alt="Multipass FCAW Weld" onclick="openModal(this.src, this.alt)">
+                <p>Multipass weld (FCAW)</p>
             </div>
-        </div>
+            </div>
     </section>
 
-    <section id="contact" class="section dark-bg">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-box" style="text-align: center; max-width: 600px; margin: 0 auto;">
-                <p>Ready to discuss your next project? Get in touch!</p>
-                <p style="font-size: 1.2em; margin: 20px 0;">
-                    Email: <a href="mailto:Jacoblangtoncooke@outlook.com">Jacoblangtoncooke@outlook.com</a>
-                </p>
-                <div class="social-links" style="display: flex; justify-content: center; gap: 20px;">
-                    <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank" class="btn" style="padding: 10px 20px;">LinkedIn</a>
-                    <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank" class="btn" style="padding: 10px 20px;">Instagram</a>
-                </div>
-            </div>
-        </div>
+    <section id="contact" class="section dark-bg container" style="text-align: center;">
+        <h2>Contact Me</h2>
+        <p>Ready to discuss your next project? Get in touch!</p>
+        <p>Email: <a href="mailto:Jacoblangtoncooke@outlook.com">Jacoblangtoncooke@outlook.com</a></p>
     </section>
-
-    <footer>
-        <div class="container" style="text-align: center; padding: 20px 0;">
-            <p>&copy; 2026 Jacob Langton-Cooke. All rights reserved.</p>
-        </div>
-    </footer>
 
     <div id="imageModal" class="modal">
         <span class="close-btn">&times;</span>
@@ -131,22 +221,23 @@
         const captionText = document.getElementById("modalCaption");
         const closeBtn = document.querySelector(".close-btn");
 
-        function openCertModal(src, caption) {
+        function openModal(src, caption) {
             modal.style.display = "flex";
             modalImg.src = src;
             captionText.innerHTML = caption;
+            document.body.style.overflow = "hidden";
         }
 
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.onclick = function() {
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
-        });
+        const closeModal = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        };
 
-        closeBtn.onclick = () => modal.style.display = "none";
-        window.onclick = (event) => { if (event.target === modal) modal.style.display = "none"; };
+        closeBtn.onclick = closeModal;
+        window.onclick = (e) => { if (e.target === modal) closeModal(); };
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeModal();
+        });
     </script>
 </body>
 </html>
