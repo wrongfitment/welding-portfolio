@@ -90,3 +90,38 @@ a { color: #ff6a00; text-decoration: none; transition: 0.3s; }
     .cert-card { flex: 1 1 200px; }
 }
 @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5em; } }
+.cta-button{
+display:inline-block;
+margin-top:20px;
+padding:12px 28px;
+background:#ff6600;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
+
+.cta-button:hover{
+background:#cc5200;
+}
+
+.email-button{
+display:inline-block;
+margin-top:15px;
+padding:12px 28px;
+background:#ff6600;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+}
+
+.gallery-item img{
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery-item img:hover{
+transform:scale(1.05);
+}
