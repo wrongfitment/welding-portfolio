@@ -40,16 +40,18 @@
                         <span class="view-label">Click to view ticket</span>
                     </div>
 
-                    <div class="cert-card">
+                    <div class="cert-card cert-view-trigger" onclick="openCertModal('repository/cwb_cert.jpg', 'CWB Certified - All Position FCAW/MCAW')">
                         <div class="cert-icon">⚙️</div>
                         <h3>CWB Certified</h3>
                         <p>All Position FCAW/MCAW</p>
+                        <span class="view-label">Click to view ticket</span>
                     </div>
 
-                    <div class="cert-card">
+                    <div class="cert-card cert-view-trigger" onclick="openCertModal('repository/safety_tickets.jpg', 'Safety Tickets: CSTS-09, WHMIS, Fall Protection')">
                         <div class="cert-icon">🛡️</div>
                         <h3>Safety Tickets</h3>
                         <p>CSTS-09, WHMIS, Fall Pro</p>
+                        <span class="view-label">Click to view ticket</span>
                     </div>
                 </aside>
 
@@ -140,13 +142,13 @@
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
-    
+
     <script>
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
 
-        // Opens the Red Seal Ticket
+        // Opens the Certificates
         function openCertModal(src, caption) {
             modal.style.display = "block";
             modalImg.src = src;
