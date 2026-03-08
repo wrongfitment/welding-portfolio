@@ -33,9 +33,29 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo">
-                <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself aswell as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry. I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades. I believe these qualities make me a valuable addition to your team.</p>
-                <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller, detailed projects—and I have reliable transportation.</p>
-                <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail through every stage of a project. Thank you for taking the time to view my webpage. I look forward to the opportunity to discuss how I can contribute to the positive and productive environment at your company.</p>
+                <div class="about-text">
+                    <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself aswell as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry. I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades. I believe these qualities make me a valuable addition to your team.</p>
+                    <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller, detailed projects—and I have reliable transportation.</p>
+                    <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail through every stage of a project. Thank you for taking the time to view my webpage. I look forward to the opportunity to discuss how I can contribute to the positive and productive environment at your company.</p>
+                </div>
+            </div>
+
+            <div class="cert-container">
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
+                    <h3>Red Seal Welder</h3>
+                    <p>SAIT Polytechnic</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">⚙️</div>
+                    <h3>CWB Certified</h3>
+                    <p>All Position FCAW/MCAW</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🛡️</div>
+                    <h3>Safety Tickets</h3>
+                    <p>CSTS-09, WHMIS, Fall Pro</p>
+                </div>
             </div>
         </div>
     </section>
@@ -91,11 +111,13 @@
     <section id="contact" class="section dark-bg">
         <div class="container">
             <h2>Contact Me</h2>
-            <p>Ready to discuss your next project? Get in touch!</p>
-            <p>Email: <a href="mailto:Jacoblangtoncooke@outlook.com">Jacoblangtoncooke@outlook.com</a></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank">Instagram</a>
+            <div class="contact-box">
+                <p>Ready to discuss your next project? Get in touch!</p>
+                <p>Email: <a href="mailto:Jacoblangtoncooke@outlook.com">Jacoblangtoncooke@outlook.com</a></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank">Instagram</a>
+                </div>
             </div>
         </div>
     </section>
@@ -113,11 +135,6 @@
     </div>
     
     <script>
-        // Ensure page always loads at the top
-        window.addEventListener("load", function () {
-            window.scrollTo(0, 0);
-        });
-
         // Modal image viewer
         var modal = document.getElementById("myModal");
         var images = document.querySelectorAll(".gallery-item img");
@@ -132,17 +149,10 @@
             }
         });
 
-        // Close modal
         var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Close modal if clicking outside image
+        span.onclick = function() { modal.style.display = "none"; }
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            if (event.target == modal) { modal.style.display = "none"; }
         }
 
         // Navigation highlight on scroll
@@ -152,7 +162,7 @@
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop - 120;
                 const sectionHeight = section.clientHeight;
                 if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                     current = section.getAttribute("id");
