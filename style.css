@@ -232,9 +232,17 @@ a {
     display: none; position: fixed; z-index: 2000; padding-top: 80px;
     left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95);
 }
-.modal-content { margin: auto; display: block; max-width: 90%; max-height: 80vh; border: 2px solid #ff6600; }
+.modal-content { 
+    margin: auto; 
+    display: block; 
+    max-width: 90%; 
+    max-height: 80vh; 
+    border: 2px solid #ff6600; 
+    border-radius: 8px;
+    object-fit: contain;
+}
 .close { position: absolute; top: 30px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; }
-#caption { text-align: center; color: #ccc; padding: 10px; }
+#caption { text-align: center; color: #ccc; padding: 10px; font-family: 'Oswald', sans-serif; }
 
 /* --- Mobile View --- */
 @media (max-width: 900px) {
