@@ -1,8 +1,10 @@
+/* --- Global Styles --- */
 html {
     scroll-behavior: smooth;
+    /* Offset for fixed header so titles don't get cut off */
+    scroll-padding-top: 80px; 
 }
 
-/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -18,6 +20,7 @@ body {
     padding: 20px;
 }
 
+/* --- Typography --- */
 h1, h2, h3 {
     font-family: 'Oswald', sans-serif;
     color: #e0e0e0;
@@ -41,23 +44,24 @@ h2::after {
 }
 
 a {
-    color: #ff6a00; /* Welding-style accent */
+    color: #ff6a00;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 a:hover {
     color: #ff8c32;
 }
 
-/* Navigation Bar */
+/* --- Navigation Bar --- */
 .top-nav {
-    background-color: #111;
-    padding: 10px 0;
+    background-color: rgba(17, 17, 17, 0.95); /* Slight transparency */
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links {
@@ -71,84 +75,92 @@ a:hover {
 
 .nav-links a {
     color: #f0f0f0;
-    text-decoration: none;
     font-size: 1.1em;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 400;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover, 
+.nav-links a.active {
     background-color: #ff6600;
     color: #1a1a1a;
-    text-decoration: none;
 }
 
-/* -------------------- */
-/* Hero Section with dehyk.jpeg Background */
-/* -------------------- */
+/* --- Hero Section --- */
 .hero {
     position: relative;
-    height: 100vh; /* full viewport height */
-    background-image: url('dehyk.jpeg'); /* local image path */
-    background-size: cover; /* cover entire section */
-    background-position: center; /* center image */
-    background-repeat: no-repeat;
+    height: 100vh;
+    background: url('dehyk.jpeg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    padding: 20px;
     color: white;
-    z-index: 0; /* for overlay */
 }
 
-/* Dark overlay for readability */
+/* Dark overlay for text readability */
 .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1; /* above background, below text */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
-/* Hero content above overlay */
-.hero h1,
-.hero .title,
-.hero .tagline {
+.hero-content {
     position: relative;
-    z-index: 2; /* ensure text is on top */
+    z-index: 2;
 }
 
-/* Hero Button */
+.hero h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+.hero .title {
+    font-size: 1.8em;
+    color: #ff6600;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.hero .tagline {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* Hero Button Style */
 .hero .btn {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 30px;
     background-color: #ff6600;
     color: #1a1a1a;
     font-weight: bold;
-    text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero .btn:hover {
-    background-color: #ff8c32;
-    color: #fff;
+    background-color: #fff;
+    color: #ff6600;
+    transform: scale(1.05);
 }
 
-/* Section Styling */
+/* --- Sections --- */
 .section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .dark-bg {
     background-color: #222;
 }
 
-/* About Section */
+/* --- About Section --- */
 .about-content {
     display: flex;
     flex-direction: column;
@@ -157,128 +169,141 @@ a:hover {
     text-align: center;
 }
 
-.about-content .profile-photo {
+.profile-photo {
     width: 250px;
     height: 350px;
     object-fit: cover;
     border-radius: 8px;
     border: 3px solid #ff6600;
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
 }
 
 .about-content p {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 850px;
+    margin-bottom: 20px;
     font-size: 1.1em;
+    color: #ccc;
 }
 
-/* Skills Section */
+/* --- Skills Section --- */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    text-align: center;
 }
 
 .skill-item {
-    background-color: #333;
-    padding: 25px;
+    background-color: #2a2a2a;
+    padding: 30px;
     border-radius: 8px;
     font-size: 1.1em;
     font-weight: bold;
-    color: #e0e0e0;
-    border-bottom: 3px solid #ff6600;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-bottom: 4px solid #ff6600;
+    transition: 0.3s ease;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
-    background-color: #444;
+    transform: translateY(-8px);
+    background-color: #333;
 }
 
-/* Gallery Section */
+/* --- Gallery Section --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
 .gallery-item {
-    text-align: center;
-    background-color: #222;
+    background-color: #2a2a2a;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
 
 .gallery-item img {
     width: 100%;
-    border-radius: 8px;
+    height: 250px; /* Consistent height for grid */
+    object-fit: cover;
+    display: block;
     cursor: pointer;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: 0.4s;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    filter: brightness(1.2);
 }
 
 .gallery-item p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
+    padding: 20px;
+    margin: 0;
+    font-size: 0.95em;
+    color: #e0e0e0; /* Improved contrast for readability */
+    font-weight: 400;
 }
 
-/* Contact Section */
+/* --- Contact & Footer --- */
 #contact p {
     text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 20px;
+    font-size: 1.2em;
 }
 
 .social-links {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .social-links a {
     display: inline-block;
-    margin: 0 15px;
-    font-size: 1.2em;
-    padding: 10px 20px;
+    margin: 10px;
+    padding: 12px 25px;
     border: 2px solid #ff6600;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
 }
 
 .social-links a:hover {
     background-color: #ff6600;
     color: #1a1a1a;
-    text-decoration: none;
 }
 
-/* Footer */
 footer {
     background-color: #111;
-    color: #888;
+    color: #666;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
+    padding: 40px 0;
+    border-top: 1px solid #333;
 }
 
-/* Responsive Design */
+/* --- Responsive Layout --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 3em; }
-    .hero .title { font-size: 1.5em; }
-    .about-content { flex-direction: column; }
-    .skills-grid, .gallery-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.8em; }
+    .hero .title { font-size: 1.4em; }
+    .nav-links { gap: 10px; font-size: 0.9em; }
+    .section { padding: 60px 0; }
 }
 
-@media (max-width: 480px) {
-    .hero h1 { font-size: 2.5em; }
-    .hero .title { font-size: 1.2em; }
-    h2 { font-size: 2em; }
-    .section { padding: 50px 0; }
+/* --- Modal Styles (Image Popup) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
 }
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+    border: 2px solid #ff6600;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
