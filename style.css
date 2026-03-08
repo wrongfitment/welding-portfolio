@@ -478,20 +478,3 @@ a {
 a:hover {
     color: #ff8c32;
 }
-/* Hero Button */
-.hero .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: #ff6600;
-    color: #1a1a1a;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.hero .btn:hover {
-    background-color: #ff8c32;
-    color: #fff;
-}
