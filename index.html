@@ -33,7 +33,7 @@
             <h2>About Me</h2>
             <div class="about-layout">
                 <aside class="cert-sidebar">
-                    <div class="cert-card cert-view-trigger" onclick="openCertModal('jacob_langton_cooke_redseal.jpg', 'Red Seal Journeyman Welder Certification')">
+                    <div class="cert-card cert-view-trigger" onclick="openCertModal('image_ac5643.png', 'Red Seal Journeyman Welder Certification')">
                         <div class="cert-icon">🏆</div>
                         <h3>Red Seal Welder</h3>
                         <p>SAIT Polytechnic</p>
@@ -142,19 +142,16 @@
     </div>
     
     <script>
-        // Modal logic (handles both gallery and certifications)
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
 
-        // Function to open modal for specific images (like certs)
         function openCertModal(src, caption) {
             modal.style.display = "block";
             modalImg.src = src;
             captionText.innerHTML = caption;
         }
 
-        // Gallery Modal Logic (Existing)
         var galleryImages = document.querySelectorAll(".gallery-item img");
         galleryImages.forEach(function(img) {
             img.onclick = function(){
@@ -164,14 +161,12 @@
             }
         });
 
-        // Close Modal Logic (Existing)
         var span = document.getElementsByClassName("close")[0];
         span.onclick = function() { modal.style.display = "none"; }
         window.onclick = function(event) {
             if (event.target == modal) { modal.style.display = "none"; }
         }
 
-        // Navigation Highlight Logic (Existing)
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-links a");
         window.addEventListener("scroll", () => {
