@@ -39,20 +39,15 @@ a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 .dark-bg{background:#222;}
 
 /* ---------------- ABOUT ---------------- */
-.about-layout{
-  display:grid;
-  grid-template-columns:220px 280px 1fr;
-  gap:50px;
-  align-items:center;
-}
-.cert-sidebar{display:flex;flex-direction:column;gap:20px;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease;}
+.about-layout{display:grid;grid-template-columns:220px 280px 1fr;gap:50px;align-items:center;}
+.cert-sidebar{display:flex;flex-direction:column;gap:20px;}
 .cert-tab{background:#2a2a2a;color:#fff;border-left:4px solid #ff6600;border-radius:6px;padding:15px 10px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:bold;transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;}
 .cert-tab:hover{background:#ff6600;color:#1a1a1a;transform:translateX(5px) scale(1.02);box-shadow:0 6px 20px rgba(255,102,0,0.35);}
 .cert-icon{font-size:1.4em;}
 .cert-label{text-transform:uppercase;font-family:'Oswald',sans-serif;}
-.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;transition: transform 0.3s ease, box-shadow 0.3s ease;opacity:0;transform:translateY(20px);}
+.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;transition: transform 0.3s ease, box-shadow 0.3s ease;}
 .profile-photo:hover{transform: scale(1.05);box-shadow:0 12px 25px rgba(255,102,0,0.35);}
-.profile-content{display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(20px);}
+.profile-content{display:flex;flex-direction:column;gap:8px;}
 .profile-content p{margin:0 0 0.65rem 0;line-height:1.5;}
 
 /* ---------------- SKILLS ---------------- */
@@ -151,7 +146,58 @@ footer p{margin:0;}
   </div>
 </section>
 
-<!-- SKILLS, GALLERY, CONTACT, FOOTER remain the same -->
+<!-- SKILLS -->
+<section id="skills" class="section dark-bg">
+  <div class="container">
+    <h2>Skills & Services</h2>
+    <div class="skills-grid">
+      <div class="skill-item">Structural Steel Fabrication</div>
+      <div class="skill-item">Blueprint Reading & Layout</div>
+      <div class="skill-item">MIG / TIG / Stick Welding</div>
+      <div class="skill-item">Custom Metalwork</div>
+      <div class="skill-item">Industrial Rigging</div>
+      <div class="skill-item">Field Welding & Repairs</div>
+      <div class="skill-item">Stainless Steel & Aluminum Work</div>
+      <div class="skill-item">Plasma & Oxyacetylene Cutting</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="container">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="Close-up of clean FCAW weld bead" loading="lazy"><p>Multipass weld — Process: FCAW</p></div>
+      <div class="gallery-item"><img src="20220124_085221.jpg" alt="Large steel hopper structure" loading="lazy"><p>Exterior of large hopper unit</p></div>
+      <div class="gallery-item"><img src="20160509_094719.jpg" alt="Precision TIG weld on aluminum frame" loading="lazy"><p>Precision aluminum weld — Process: GTAW</p></div>
+      <div class="gallery-item"><img src="20160509_094657.jpg" alt="Aluminum sled deck fabrication" loading="lazy"><p>Aluminum sled-deck for pickup truck</p></div>
+      <div class="gallery-item"><img src="20161004_103558.jpg" alt="Custom handrail installation" loading="lazy"><p>Custom handrail for upper mezzanine</p></div>
+      <div class="gallery-item"><img src="20160701_043528.jpg" alt="Custom fabricated staircase" loading="lazy"><p>Custom staircase in office building</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark-bg">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Ready to discuss your next project? Get in touch.</p>
+    <a class="email-button" href="mailto:Jacoblangtoncooke@outlook.com">Send Email</a>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 Jacob Langton-Cooke. All rights reserved.</p>
+  </div>
+</footer>
 
 <!-- MODAL -->
 <div id="myModal" class="modal">
@@ -161,10 +207,7 @@ footer p{margin:0;}
 </div>
 
 <script>
-// Scroll to top on load
 window.addEventListener("load",()=>{window.scrollTo(0,0);});
-
-// Modal functionality
 var modal=document.getElementById("myModal");
 var images=document.querySelectorAll(".gallery-item img");
 var modalImg=document.getElementById("img01");
@@ -173,34 +216,9 @@ function openCertModal(src,caption){modal.style.display="block";modalImg.src=src
 images.forEach(img=>{img.onclick=()=>{modal.style.display="block";modalImg.src=img.src;captionText.innerHTML=img.nextElementSibling.innerText;}});
 document.getElementsByClassName("close")[0].onclick=()=>{modal.style.display="none";}
 window.onclick=e=>{if(e.target==modal){modal.style.display="none";}};
-
-// Scrollspy
 const sections=document.querySelectorAll("section");
 const navLinks=document.querySelectorAll(".nav-links a");
-window.addEventListener("scroll",()=>{
-  let current="";sections.forEach(section=>{
-    const top=section.offsetTop-80;const height=section.clientHeight;
-    if(window.scrollY>=top&&window.scrollY<top+height){current=section.getAttribute("id");}
-  });
-  navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});
-});
-
-// About section fade-in
-const certSidebar=document.querySelector(".cert-sidebar");
-const profilePhoto=document.querySelector(".profile-photo");
-const profileContent=document.querySelector(".profile-content");
-const options={threshold:0.2};
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      certSidebar.style.opacity="1"; certSidebar.style.transform="translateY(0)";
-      profilePhoto.style.opacity="1"; profilePhoto.style.transform="translateY(0)";
-      profileContent.style.opacity="1"; profileContent.style.transform="translateY(0)";
-      observer.unobserve(entry.target);
-    }
-  });
-},options);
-observer.observe(document.querySelector(".about-layout"));
+window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const top=section.offsetTop-80;const height=section.clientHeight;if(window.scrollY>=top&&window.scrollY<top+height){current=section.getAttribute("id");}});navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});});
 </script>
 
 </body>
