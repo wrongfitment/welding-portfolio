@@ -85,52 +85,37 @@ a:hover {
 }
 
 
-/* Hero Section */
+/* Hero Section Upgrade */
 .hero {
-    background: url('dehyk.jpeg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
     position: relative;
-    height: 80vh; /* Make hero section cover the entire viewport height */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('hero-welding.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    min-height: 80vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
+/* Hero text styling */
 .hero h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
-    color: #fff;
+    font-size: 3em;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
 }
 
 .hero .title {
-    font-size: 1.8em;
-    color: #ccc;
-    margin-bottom: 5px;
+    font-size: 1.5em;
+    margin-top: 10px;
 }
 
 .hero .tagline {
     font-size: 1.2em;
-    color: #ff6600;
-    font-weight: bold;
+    margin-top: 5px;
+    color: #ffcc80; /* subtle welding/metal accent */
 }
-
 /* Section Styling */
 .section {
     padding: 80px 0;
