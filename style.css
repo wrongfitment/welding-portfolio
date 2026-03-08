@@ -75,3 +75,58 @@ a { color: #ff6a00; text-decoration: none; transition: 0.3s; }
     .cert-card { flex: 1 1 200px; }
 }
 @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5em; } }
+/* Styling for the Certification link in the About section */
+.cert-card {
+    display: inline-block;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #ff6600;
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    background-color: #ff6600;
+    color: #1a1a1a;
+}
+
+.cert-card p {
+    margin: 0;
+    color: inherit;
+}
+
+/* Modal Styles (Ensure these exist for the pop-up to work) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    padding-top: 80px;
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
