@@ -405,3 +405,8 @@ footer p {
   background:#ff6600;
   color:#1a1a1a;
 }
+/* ---------------- ABOUT DESCRIPTION PARAGRAPHS ---------------- */
+.profile-content p {
+  margin-bottom: 0.75rem; /* reduce spacing between paragraphs */
+  line-height: 1.5; /* optional: slightly tighter line height for better readability */
+}
