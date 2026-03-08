@@ -8,107 +8,85 @@
 <meta name="keywords" content="Welder, Structural Fitter, Red Seal Welder, Welding Services, Metal Fabrication, Alberta Welder">
 <meta name="author" content="Jacob Langton-Cooke">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
 <style>
 /* ---------------- GLOBAL ---------------- */
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #1a1a1a; color: #f0f0f0; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-h1,h2,h3 { font-family: 'Oswald', sans-serif; color: #e0e0e0; text-transform: uppercase; letter-spacing: 1px; }
-h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; position: relative; }
-h2::after { content: ''; display: block; width: 60px; height: 4px; background: #ff6600; margin: 12px auto 0; border-radius: 2px; }
-a { color: #ff6a00; text-decoration: none; transition: 0.25s ease; }
+html{scroll-behavior:smooth;scroll-padding-top:80px;}
+body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#1a1a1a;color:#f0f0f0;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+h1,h2,h3{font-family:'Oswald',sans-serif;color:#e0e0e0;text-transform:uppercase;letter-spacing:1px;}
+h2{text-align:center;margin-bottom:40px;font-size:2.5em;position:relative;}
+h2::after{content:'';display:block;width:60px;height:4px;background:#ff6600;margin:12px auto 0;border-radius:2px;}
+a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 
 /* ---------------- NAVIGATION ---------------- */
-.top-nav { background: rgba(17,17,17,0.95); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 12px rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
-.nav-links { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 25px; }
-.nav-links a { color: #f0f0f0; font-weight: 700; text-transform: uppercase; font-size: 0.9em; padding: 8px 16px; border-radius: 4px; transition: 0.25s; }
-.nav-links a:hover, .nav-links a.active { background: #ff6600; color: #1a1a1a; }
+.top-nav{background:rgba(17,17,17,0.95);padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.6);backdrop-filter:blur(4px);}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:25px;}
+.nav-links a{color:#f0f0f0;font-weight:700;text-transform:uppercase;font-size:0.9em;padding:8px 16px;border-radius:4px;transition:0.25s;}
+.nav-links a:hover,.nav-links a.active{background:#ff6600;color:#1a1a1a;}
 
 /* ---------------- HERO ---------------- */
-.hero { position: relative; height: 100vh; background: url('dehyk.jpeg') center/cover no-repeat; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.65); z-index:1; }
-.hero-content { position: relative; z-index: 2; padding: 20px; color: #fff; }
-.hero h1 { font-size: 4.5em; margin: 0; letter-spacing: 2px; }
-.hero .title { font-size: 1.8em; color: #ff6600; font-weight: 700; margin-top: 10px; }
-.hero .tagline { margin-top: 10px; opacity: 0.9; }
-.cta-button, .email-button { display:inline-block; margin-top:20px; padding:14px 32px; background:#ff6600; color:#fff; font-weight:bold; border-radius:6px; text-transform:uppercase; letter-spacing:1px; transition:0.25s; }
-.cta-button:hover, .email-button:hover { background:#ff7f24; transform:translateY(-2px); box-shadow:0 6px 18px rgba(255,102,0,0.35); }
+.hero{position:relative;height:100vh;background:url('dehyk.jpeg') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
+.hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:1;}
+.hero-content{position:relative;z-index:2;padding:20px;}
+.hero h1{font-size:4.5em;margin:0;letter-spacing:2px;}
+.hero .title{font-size:1.8em;color:#ff6600;font-weight:700;margin-top:10px;}
+.hero .tagline{margin-top:10px;opacity:0.9;}
+.cta-button,.email-button{display:inline-block;margin-top:20px;padding:14px 32px;background:#ff6600;color:#fff;font-weight:bold;border-radius:6px;text-transform:uppercase;letter-spacing:1px;transition:0.25s;}
+.cta-button:hover,.email-button:hover{background:#ff7f24;transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,102,0,0.35);}
 
 /* ---------------- SECTIONS ---------------- */
-.section { padding:100px 0; }
-.dark-bg { background:#222; }
+.section{padding:100px 0;}
+.dark-bg{background:#222;}
 
 /* ---------------- ABOUT ---------------- */
-.about-layout {
-  display: grid;
-  grid-template-columns: 220px auto 1fr; /* Certification | Profile Image | Description */
-  gap: 40px;
-  align-items: center; /* Vertical centering of image and text */
-}
-
-/* Certification sidebar */
-.cert-sidebar { display: flex; flex-direction: column; gap: 20px; }
-.cert-tab { background:#2a2a2a; color:#fff; border-left:4px solid #ff6600; border-radius:6px; padding:15px 10px; display:flex; align-items:center; gap:12px; cursor:pointer; font-weight:bold; transition:0.3s; }
-.cert-tab:hover { background:#ff6600; color:#1a1a1a; transform:translateX(5px); box-shadow:0 6px 15px rgba(0,0,0,0.3); }
-.cert-icon { font-size:1.4em; }
-.cert-label { text-transform:uppercase; font-family:'Oswald',sans-serif; }
-
-/* Profile Image column */
-.profile-photo-wrapper { display: flex; justify-content: center; }
-.profile-photo { width: 100%; max-width: 280px; border-radius: 8px; border: 3px solid #ff6600; }
-
-/* Description column */
-.profile-content { display: flex; flex-direction: column; gap: 1rem; }
+.about-layout{display:grid;grid-template-columns:220px 1fr;gap:50px;align-items:start;}
+.cert-sidebar{display:flex;flex-direction:column;gap:20px;}
+.cert-tab{background:#2a2a2a;color:#fff;border-left:4px solid #ff6600;border-radius:6px;padding:15px 10px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:bold;transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;}
+.cert-tab:hover{background:#ff6600;color:#1a1a1a;transform:translateX(5px) scale(1.02);box-shadow:0 6px 20px rgba(255,102,0,0.35);}
+.cert-icon{font-size:1.4em;}
+.cert-label{text-transform:uppercase;font-family:'Oswald',sans-serif;}
+.profile-content{display:flex;flex-direction:column;gap:10px;}
+.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;transition: transform 0.3s ease, box-shadow 0.3s ease;}
+.profile-photo:hover{transform: scale(1.05);box-shadow: 0 12px 25px rgba(255,102,0,0.35);}
+.profile-content p{margin-bottom:0.75rem;line-height:1.5;}
 
 /* ---------------- SKILLS ---------------- */
-.skills-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-.skill-item { background:#333; padding:25px 10px; border-radius:6px; text-align:center; font-weight:bold; min-height:80px; display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; text-transform:uppercase; transition:0.25s; }
-.skill-item:hover { background:#ff6600; color:#1a1a1a; transform:translateY(-3px); }
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.skill-item{background:#333;padding:25px 10px;border-radius:6px;text-align:center;font-weight:bold;min-height:80px;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;text-transform:uppercase;transition:0.25s;}
+.skill-item:hover{background:#ff6600;color:#1a1a1a;transform:translateY(-3px);}
 
 /* ---------------- GALLERY ---------------- */
-.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
-.gallery-item { background:#2a2a2a; border-radius:8px; overflow:hidden; }
-.gallery-item img { width:100%; height:250px; object-fit:cover; cursor:pointer; transition:0.35s; }
-.gallery-item img:hover { transform:scale(1.08); filter:brightness(1.1); }
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.gallery-item{background:#2a2a2a;border-radius:8px;overflow:hidden;}
+.gallery-item img{width:100%;height:250px;object-fit:cover;cursor:pointer;transition:0.35s;}
+.gallery-item img:hover{transform:scale(1.08);filter:brightness(1.1);}
 
 /* ---------------- MODAL ---------------- */
-.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); padding-top:80px; }
-.modal-content { margin:auto; display:block; max-width:90%; max-height:80vh; border:3px solid #ff6600; animation:zoom 0.3s; }
-@keyframes zoom { from { transform:scale(0.85) } to { transform:scale(1) } }
-.close { position:absolute; top:30px; right:40px; color:#fff; font-size:50px; cursor:pointer; font-weight:bold; }
-#caption { text-align:center; color:#ccc; font-family:'Oswald',sans-serif; font-size:1.5rem; padding:10px 0; }
+.modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);padding-top:80px;}
+.modal-content{margin:auto;display:block;max-width:90%;max-height:80vh;border:3px solid #ff6600;animation:zoom 0.3s;}
+@keyframes zoom{from{transform:scale(0.85)}to{transform:scale(1)}}
+.close{position:absolute;top:30px;right:40px;color:#fff;font-size:50px;cursor:pointer;font-weight:bold;}
+#caption{text-align:center;color:#ccc;font-family:'Oswald',sans-serif;font-size:1.5rem;padding:10px 0;}
 
 /* ---------------- CONTACT ---------------- */
-#contact .container { text-align:center; }
-.social-links { margin-top:25px; display:flex; justify-content:center; gap:25px; }
-.social-links a { font-weight:bold; color:white; transition:0.25s; }
-.social-links a:hover { color:#ff6600; }
-
-/* ---------------- FOOTER ---------------- */
-footer { width:100%; text-align:center; padding:25px 0; background:#111; color:#ccc; font-size:0.9em; margin-top:auto; }
-footer p { margin:0; }
+#contact .container{text-align:center;}
+.social-links{margin-top:25px;display:flex;justify-content:center;gap:25px;}
+.social-links a{font-weight:bold;color:white;transition:0.25s;}
+.social-links a:hover{color:#ff6600;}
 
 /* ---------------- RESPONSIVE ---------------- */
-@media(max-width:1024px) {
-  .skills-grid { grid-template-columns:repeat(2,1fr); }
-}
-@media(max-width:900px) {
-  .about-layout { grid-template-columns:1fr; text-align:center; }
-  .profile-photo-wrapper { margin: 1rem 0; }
-  .cert-sidebar { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 1.5rem; }
-  .hero h1 { font-size:3em; }
-}
-@media(max-width:600px) {
-  .skills-grid { grid-template-columns:1fr; }
-  .hero h1 { font-size:2.4em; }
-}
+@media(max-width:1024px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){.about-layout{grid-template-columns:1fr;}.hero h1{font-size:3em;}}
+@media(max-width:600px){.skills-grid{grid-template-columns:1fr;}.hero h1{font-size:2.4em;}}
+footer{width:100%;text-align:center;padding:20px 0;background:#111;color:#ccc;font-size:0.9em;margin-top:60px;}
+footer p{margin:0;}
 </style>
 </head>
+
 <body>
 
 <!-- NAV -->
-<nav class="top-nav" aria-label="Main navigation">
+<nav class="top-nav">
   <div class="container">
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -129,38 +107,45 @@ footer p { margin:0; }
   </div>
 </header>
 
-<main>
 <!-- ABOUT -->
-<section id="about" class="section" aria-labelledby="about-heading">
+<section id="about" class="section">
   <div class="container">
-    <h2 id="about-heading">About Me</h2>
+    <h2>About Me</h2>
     <div class="about-layout">
-
-      <!-- Certification sidebar -->
-      <aside class="cert-sidebar" aria-label="Certifications">
-        <div class="cert-tab" onclick="openCertModal('repository/redseal.png','Red Seal Journeyman Welder Certification')"><span class="cert-icon">🏆</span><span class="cert-label">Red Seal</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')"><span class="cert-icon">🛠️</span><span class="cert-label">CWB</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')"><span class="cert-icon">✅</span><span class="cert-label">Safety</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/firstaid.png','First Aid Certification')"><span class="cert-icon">🚑</span><span class="cert-label">First Aid</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/confinedspace.png','Confined Space Certification')"><span class="cert-icon">⚠️</span><span class="cert-label">Confined Space</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/forklift.png','Forklift Certification')"><span class="cert-icon">🏗️</span><span class="cert-label">Forklift</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/weldinginspector.png','Welding Inspector Certification')"><span class="cert-icon">🔍</span><span class="cert-label">Welding Inspector</span></div>
-      </aside>
-
-      <!-- Profile image -->
-      <div class="profile-photo-wrapper">
-        <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo" loading="lazy">
+      <!-- Certification Sidebar -->
+      <div class="cert-sidebar">
+        <div class="cert-tab" onclick="openCertModal('repository/redseal.png','Red Seal Journeyman Welder Certification')">
+          <span class="cert-icon">🏆</span><span class="cert-label">Red Seal</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')">
+          <span class="cert-icon">🛠️</span><span class="cert-label">CWB</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')">
+          <span class="cert-icon">✅</span><span class="cert-label">Safety</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/firstaid.png','First Aid Certification')">
+          <span class="cert-icon">🚑</span><span class="cert-label">First Aid</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/confinedspace.png','Confined Space Certification')">
+          <span class="cert-icon">⚠️</span><span class="cert-label">Confined Space</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/forklift.png','Forklift Certification')">
+          <span class="cert-icon">🏗️</span><span class="cert-label">Forklift</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/weldinginspector.png','Welding Inspector Certification')">
+          <span class="cert-icon">🔍</span><span class="cert-label">Welding Inspector</span>
+        </div>
       </div>
 
-      <!-- Description -->
+      <!-- Profile + Description -->
       <div class="profile-content">
-        <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself and my colleagues in the welding and manufacturing industry.</p>
-        <p>I am available full-time, including days, nights, and weekends. I bring a strong work ethic, extensive experience, and a passion for mentoring others in the trades.</p>
-        <p>I hold Red Seal, CWB, Safety, First Aid, Confined Space, Forklift, and Welding Inspector certifications, and have 5+ years of hands-on welding and manufacturing experience.</p>
-        <p>Equipped with my own tools for layout, fabrication, and finishing, I can handle both large structural projects and smaller detailed work.</p>
-        <p>Maintaining professionalism, reliability, and accuracy is my priority on every project.</p>
+        <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo" loading="lazy">
+        <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education—both my own and that of the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry.</p>
+        <p>I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades. I believe these qualities make me a valuable addition to your team.</p>
+        <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller, detailed projects—and I have reliable transportation.</p>
+        <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail through every stage of a project.</p>
+        <p>Thank you for taking the time to view my webpage. I look forward to the opportunity to discuss how I can contribute to the positive and productive environment at your company.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -204,8 +189,8 @@ footer p { margin:0; }
     <p>Ready to discuss your next project? Get in touch.</p>
     <a class="email-button" href="mailto:Jacoblangtoncooke@outlook.com">Send Email</a>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
@@ -225,31 +210,19 @@ footer p { margin:0; }
 </div>
 
 <script>
-// Scroll to top
-window.addEventListener("load", ()=>{window.scrollTo(0,0);});
-
-// Modal
+window.addEventListener("load", function(){window.scrollTo(0,0);});
 var modal=document.getElementById("myModal");
 var images=document.querySelectorAll(".gallery-item img");
 var modalImg=document.getElementById("img01");
 var captionText=document.getElementById("caption");
 function openCertModal(src,caption){modal.style.display="block";modalImg.src=src;captionText.innerHTML=caption;}
-images.forEach(img=>img.onclick=function(){modal.style.display="block";modalImg.src=this.src;captionText.innerHTML=this.nextElementSibling.innerText;})
-document.getElementsByClassName("close")[0].onclick=function(){modal.style.display="none";}
+images.forEach(function(img){img.onclick=function(){modal.style.display="block";modalImg.src=this.src;captionText.innerHTML=this.nextElementSibling.innerText;}})
+var span=document.getElementsByClassName("close")[0];
+span.onclick=function(){modal.style.display="none";}
 window.onclick=function(event){if(event.target==modal){modal.style.display="none";}}
-
-// Scrollspy
 const sections=document.querySelectorAll("section");
 const navLinks=document.querySelectorAll(".nav-links a");
-window.addEventListener("scroll",()=>{
-  let current="";
-  sections.forEach(section=>{
-    const sectionTop=section.offsetTop-80;
-    const sectionHeight=section.clientHeight;
-    if(window.scrollY>=sectionTop && window.scrollY<sectionTop+sectionHeight){ current=section.getAttribute("id"); }
-  });
-  navLinks.forEach(link=>{ link.classList.remove("active"); if(link.getAttribute("href")==="#"+current){ link.classList.add("active"); } });
-});
+window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const sectionTop=section.offsetTop-80;const sectionHeight=section.clientHeight;if(window.scrollY>=sectionTop && window.scrollY<sectionTop+sectionHeight){current=section.getAttribute("id");}});navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});});
 </script>
 
 </body>
