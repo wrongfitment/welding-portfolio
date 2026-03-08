@@ -90,7 +90,7 @@ a:hover {
 .hero {
     position: relative;
     height: 100vh; /* full viewport height */
-    background-image: url('images/dehyk.jpeg'); /* local image path */
+    background-image: url('dehyk.jpeg'); /* local image path */
     background-size: cover; /* cover entire section */
     background-position: center; /* center image */
     background-repeat: no-repeat;
