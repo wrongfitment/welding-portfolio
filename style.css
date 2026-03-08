@@ -27,29 +27,33 @@ a { color: #ff6a00; text-decoration: none; transition: 0.3s; }
 .dark-bg { background-color: #222; }
 .about-layout { display: grid; grid-template-columns: 1fr 3fr; gap: 60px; align-items: start; }
 .cert-sidebar { display: flex; flex-direction: column; gap: 20px; }
-.cert-card { background-color: #2a2a2a; padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid #ff6600; transition: 0.3s; cursor: pointer; }
-.cert-card:hover { transform: translateX(8px); background-color: #333; }
+
+/* Merged Cert Card Style */
+.cert-card { 
+    background-color: #2a2a2a; 
+    padding: 20px; 
+    border-radius: 8px; 
+    text-align: center; 
+    border: 1px solid #ff6600; 
+    border-left: 4px solid #ff6600; 
+    transition: 0.3s; 
+    cursor: pointer; 
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cert-card:hover { transform: translateX(8px); background-color: #ff6600; color: #1a1a1a; }
+.cert-card p { margin: 0; color: inherit; }
 .view-label { display: block; font-size: 0.75em; color: #ff6600; margin-top: 10px; font-weight: bold; }
-.profile-photo { width: 280px; border-radius: 8px; border: 3px solid #ff6600; }
+.profile-photo { width: 280px; border-radius: 8px; border: 3px solid #ff6600; margin-bottom: 20px; }
 
 /* --- Skills (4 Columns) --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 .skill-item {
-    background-color: #333;
-    padding: 25px 10px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
+    background-color: #333; padding: 25px 10px; border-radius: 4px; text-align: center; font-weight: bold;
+    min-height: 80px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
 }
 
 /* --- Gallery & Lightbox --- */
@@ -57,76 +61,32 @@ a { color: #ff6a00; text-decoration: none; transition: 0.3s; }
 .gallery-item { background-color: #2a2a2a; border-radius: 8px; overflow: hidden; }
 .gallery-item img { width: 100%; height: 250px; object-fit: cover; cursor: pointer; transition: 0.3s; }
 
+/* Merged Modal Style */
 .modal {
-    display: none; position: fixed; z-index: 2000; left: 0; top: 0; 
-    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9);
-    flex-direction: column; justify-content: center; align-items: center;
+    display: none; position: fixed; z-index: 2000; left: 0; top: 0; 
+    width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 80px;
 }
-.modal-content { max-width: 90%; max-height: 80vh; border: 3px solid #ff6600; animation: zoom 0.3s; }
+
+.modal-content { 
+    margin: auto; display: block; max-width: 90%; max-height: 80vh; 
+    border: 3px solid #ff6600; animation: zoom 0.3s; 
+}
+
 @keyframes zoom { from {transform: scale(0.8)} to {transform: scale(1)} }
-.close-btn { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 50px; cursor: pointer; }
-#modalCaption { color: #ccc; font-family: 'Oswald', sans-serif; font-size: 1.5rem; margin-top: 15px; }
+
+.close { 
+    position: absolute; top: 30px; right: 40px; color: #fff; 
+    font-size: 50px; cursor: pointer; font-weight: bold; 
+}
+
+#caption { text-align: center; color: #ccc; font-family: 'Oswald', sans-serif; font-size: 1.5rem; padding: 10px 0; }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 900px) {
-    .about-layout { grid-template-columns: 1fr; }
-    .cert-sidebar { order: 2; flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .cert-card { flex: 1 1 200px; }
+    .about-layout { grid-template-columns: 1fr; }
+    .cert-sidebar { order: 2; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .cert-card { flex: 1 1 200px; }
 }
 @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5em; } }
-/* Styling for the Certification link in the About section */
-.cert-card {
-    display: inline-block;
-    background-color: #333;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: 1px solid #ff6600;
-    transition: 0.3s;
-}
-
-.cert-card:hover {
-    background-color: #ff6600;
-    color: #1a1a1a;
-}
-
-.cert-card p {
-    margin: 0;
-    color: inherit;
-}
-
-/* Modal Styles (Ensure these exist for the pop-up to work) */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    padding-top: 80px;
-    left: 0; 
-    top: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.9);
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 80vh;
-}
-
-.close {
-    position: absolute;
-    top: 30px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#caption {
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-}
