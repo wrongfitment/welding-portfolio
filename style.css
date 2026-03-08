@@ -83,39 +83,60 @@ a:hover {
     color: #1a1a1a;
     text-decoration: none;
 }
-
-/* Hero Section with GitHub Image Background */
+/* -------------------- */
+/* Hero Section - Background Image Fix */
+/* -------------------- */
 .hero {
     position: relative; /* needed for overlay */
     height: 100vh; /* full viewport height */
     background-image: url('https://raw.githubusercontent.com/<username>/<repository>/main/Screenshot%202025-07-04%20204742.png');
-    background-size: cover; /* cover the whole section */
+    background-size: cover; /* cover entire section */
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 20px; /* existing spacing */
     color: white;
+    z-index: 0; /* ensure overlay is above background */
 }
 
-/* Dark overlay for text readability */
+/* Dark overlay for readability */
 .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* above background but below text */
 }
 
-/* Ensure hero content is above overlay */
+/* Hero content above overlay */
 .hero h1,
 .hero .title,
 .hero .tagline {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* ensures text is visible */
+}
+
+/* Optional button */
+.hero .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #ff6600;
+    color: #1a1a1a;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #ff8c32;
+    color: #fff;
+}
 }
 /* Section Styling */
 .section {
