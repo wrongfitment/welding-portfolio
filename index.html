@@ -39,14 +39,12 @@
                         <p>SAIT Polytechnic</p>
                         <span class="view-label">Click to view ticket</span>
                     </div>
-
                     <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/cwb_cert.jpg', 'CWB Certified - All Position FCAW/MCAW')">
                         <div class="cert-icon">⚙️</div>
                         <h3>CWB Certified</h3>
                         <p>All Position FCAW/MCAW</p>
                         <span class="view-label">Click to view ticket</span>
                     </div>
-
                     <div class="cert-card cert-view-trigger" onclick="openCertModal('./repository/safety_tickets.jpg', 'Safety Tickets: CSTS-09, WHMIS, Fall Protection')">
                         <div class="cert-icon">🛡️</div>
                         <h3>Safety Tickets</h3>
@@ -59,8 +57,8 @@
                     <div class="about-content">
                         <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo">
                         <div class="about-text">
-                            <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself aswell as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry. I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades.</p>
-                            <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—and I have reliable transportation.</p>
+                            <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself as well as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry.</p>
+                            <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience. I am fully equipped with my own tools and have reliable transportation.</p>
                         </div>
                     </div>
                 </div>
@@ -102,7 +100,6 @@
         <div class="container">
             <h2>Contact Me</h2>
             <div class="contact-box">
-                <p>Ready to discuss your next project? Get in touch!</p>
                 <p>Email: <a href="mailto:Jacoblangtoncooke@outlook.com">Jacoblangtoncooke@outlook.com</a></p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank">LinkedIn</a>
@@ -113,46 +110,49 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Jacob Langton-Cooke. All rights reserved.</p>
-        </div>
+        <div class="container"><p>&copy; 2026 Jacob Langton-Cooke. All rights reserved.</p></div>
     </footer>
 
     <div id="myModal" class="modal">
-        <span class="close">&times;</span>
+        <span class="close" id="closeModal">&times;</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
 
     <script>
+        // Modal logic
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
 
+        // Function for Certificates
         function openCertModal(src, caption) {
-            modal.style.display = "block";
+            modal.style.display = "flex"; // Changed to flex for centering
             modalImg.src = src;
             captionText.innerHTML = caption;
         }
 
-        var galleryImages = document.querySelectorAll(".gallery-item img");
-        galleryImages.forEach(function(img) {
-            img.onclick = function(){
-                modal.style.display = "block";
+        // Auto-assign click to all Gallery Images
+        document.querySelectorAll('.gallery-item img').forEach(image => {
+            image.onclick = function() {
+                modal.style.display = "flex";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.nextElementSibling.innerText;
+                captionText.innerHTML = this.alt || "Project Image";
             }
         });
 
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() { modal.style.display = "none"; }
-        window.onclick = function(event) {
-            if (event.target == modal) { modal.style.display = "none"; }
+        // Close logic
+        var closeBtn = document.getElementById("closeModal");
+        closeBtn.onclick = function() { 
+            modal.style.display = "none"; 
         }
 
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".nav-links a");
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 12
+        // Close when clicking outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
