@@ -7,8 +7,8 @@
 <meta name="description" content="Jacob Langton-Cooke - Red Seal Welder and Structural Fitter with 5+ years experience in fabrication, industrial welding, aluminum and stainless steel work.">
 <meta name="keywords" content="Welder, Structural Fitter, Red Seal Welder, Welding Services, Metal Fabrication, Alberta Welder">
 <meta name="author" content="Jacob Langton-Cooke">
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
 <style>
 /* ---------------- GLOBAL ---------------- */
 html{scroll-behavior:smooth;scroll-padding-top:80px;}
@@ -40,16 +40,14 @@ a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 .dark-bg{background:#222;}
 
 /* ---------------- ABOUT ---------------- */
-.about-layout{display:grid;grid-template-columns:1fr 2.5fr;gap:50px;align-items:start;}
-.cert-sidebar{display:flex;flex-direction:column;align-items:center;}
+.about-layout{display:grid;grid-template-columns:180px 1fr;gap:50px;align-items:start;}
+.cert-sidebar{display:flex;flex-direction:column;gap:20px;}
+.cert-tab{background:#2a2a2a;color:#fff;border-left:4px solid #ff6600;border-radius:6px;padding:15px 10px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:bold;transition:0.3s;}
+.cert-tab:hover{background:#ff6600;color:#1a1a1a;transform:translateX(5px);box-shadow:0 6px 15px rgba(0,0,0,0.3);}
+.cert-icon{font-size:1.4em;}
+.cert-label{text-transform:uppercase;font-family:'Oswald',sans-serif;}
 .profile-content{display:flex;flex-direction:column;gap:15px;}
-.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;margin-bottom:20px;}
-.about-text p{margin-bottom:15px;}
-
-/* CERT CARDS */
-.cert-card{background:#2a2a2a;padding:20px;border-radius:8px;text-align:center;border:1px solid #ff6600;border-left:4px solid #ff6600;transition:0.25s;cursor:pointer;}
-.cert-card:hover{transform:translateX(8px);background:#ff6600;color:#1a1a1a;box-shadow:0 8px 20px rgba(0,0,0,0.4);}
-.cert-card p{margin:0;}
+.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;}
 
 /* ---------------- SKILLS ---------------- */
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
@@ -75,19 +73,19 @@ a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 .social-links a{font-weight:bold;color:white;transition:0.25s;}
 .social-links a:hover{color:#ff6600;}
 
-/* ---------------- FOOTER ---------------- */
-footer{width:100%;text-align:center;padding:20px 0;background:#111;color:#ccc;font-size:0.9em;margin-top:60px;}
-footer p{margin:0;}
-
 /* ---------------- RESPONSIVE ---------------- */
 @media(max-width:1024px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:900px){.about-layout{grid-template-columns:1fr;} .hero h1{font-size:3em;}}
-@media(max-width:600px){.skills-grid{grid-template-columns:1fr;} .hero h1{font-size:2.4em;}}
+@media(max-width:900px){.about-layout{grid-template-columns:1fr;}.hero h1{font-size:3em;}}
+@media(max-width:600px){.skills-grid{grid-template-columns:1fr;}.hero h1{font-size:2.4em;}}
+/* --- Footer --- */
+footer{width:100%;text-align:center;padding:20px 0;background:#111;color:#ccc;font-size:0.9em;margin-top:60px;}
+footer p{margin:0;}
 </style>
 </head>
+
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav class="top-nav">
   <div class="container">
     <ul class="nav-links">
@@ -114,18 +112,25 @@ footer p{margin:0;}
   <div class="container">
     <h2>About Me</h2>
     <div class="about-layout">
-      <!-- Left: Certification -->
       <div class="cert-sidebar">
-        <div class="cert-card" onclick="openCertModal('repository/redseal.png','Red Seal Journeyman Welder Certification')">
-          <p><strong>🏆 Red Seal Certification</strong></p>
+        <div class="cert-tab" onclick="openCertModal('repository/redseal.png','Red Seal Journeyman Welder Certification')">
+          <span class="cert-icon">🏆</span>
+          <span class="cert-label">Red Seal</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')">
+          <span class="cert-icon">🛠️</span>
+          <span class="cert-label">CWB</span>
+        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')">
+          <span class="cert-icon">✅</span>
+          <span class="cert-label">Safety</span>
         </div>
       </div>
-      <!-- Right: Profile + Description -->
       <div class="profile-content">
         <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo" loading="lazy">
         <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education of both myself as well as the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry.</p>
         <p>I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades.</p>
-        <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision.</p>
+        <p>I hold a Red Seal Certification in Welding from SAIT, CWB Certification, and Safety Certification, and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision.</p>
         <p>I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller detailed projects—and I have reliable transportation.</p>
         <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail throughout every stage of a project.</p>
       </div>
@@ -193,43 +198,19 @@ footer p{margin:0;}
 </div>
 
 <script>
-// Scroll to top on load
-window.addEventListener("load", () => window.scrollTo(0,0));
-
-// Modal functionality
-var modal = document.getElementById("myModal");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-function openCertModal(src, caption){
-  modal.style.display = "block";
-  modalImg.src = src;
-  captionText.innerHTML = caption;
-}
-
-document.querySelectorAll(".gallery-item img").forEach(img => {
-  img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.nextElementSibling.innerText;
-  }
-});
-
-document.getElementsByClassName("close")[0].onclick = function(){ modal.style.display = "none"; }
-window.onclick = function(event){ if(event.target == modal) modal.style.display = "none"; }
-
-// Navigation scroll highlight
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 80;
-    const sectionHeight = section.clientHeight;
-    if(window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight){ current = section.getAttribute("id"); }
-  });
-  navLinks.forEach(link => { link.classList.remove("active"); if(link.getAttribute("href") === "#" + current){ link.classList.add("active"); } });
-});
+window.addEventListener("load", function(){window.scrollTo(0,0);});
+var modal=document.getElementById("myModal");
+var images=document.querySelectorAll(".gallery-item img");
+var modalImg=document.getElementById("img01");
+var captionText=document.getElementById("caption");
+function openCertModal(src,caption){modal.style.display="block";modalImg.src=src;captionText.innerHTML=caption;}
+images.forEach(function(img){img.onclick=function(){modal.style.display="block";modalImg.src=this.src;captionText.innerHTML=this.nextElementSibling.innerText;}})
+var span=document.getElementsByClassName("close")[0];
+span.onclick=function(){modal.style.display="none";}
+window.onclick=function(event){if(event.target==modal){modal.style.display="none";}}
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".nav-links a");
+window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const sectionTop=section.offsetTop-80;const sectionHeight=section.clientHeight;if(window.scrollY>=sectionTop && window.scrollY<sectionTop+sectionHeight){current=section.getAttribute("id");}});navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});});
 </script>
 
 </body>
