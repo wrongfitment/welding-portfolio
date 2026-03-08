@@ -125,3 +125,44 @@ transition:0.3s;
 .gallery-item img:hover{
 transform:scale(1.05);
 }
+#contact .container{
+text-align:center;
+}
+
+#contact p{
+margin-bottom:20px;
+}
+
+.social-links{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.social-links a{
+text-decoration:none;
+font-weight:bold;
+color:white;
+transition:0.3s;
+}
+
+.social-links a:hover{
+color:#ff6600;
+}
+
+.email-button{
+display:inline-block;
+margin-top:15px;
+padding:12px 28px;
+background:#ff6600;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
+
+.email-button:hover{
+background:#cc5200;
+}
