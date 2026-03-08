@@ -11,7 +11,7 @@
 <style>
 /* ---------------- GLOBAL ---------------- */
 html{scroll-behavior:smooth;scroll-padding-top:80px;}
-body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#1a1a1a;color:#f0f0f0;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}
+body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#1a1a1a;color:#f0f0f0;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;}
 .container{max-width:1200px;margin:0 auto;padding:0 20px;}
 h1,h2,h3{font-family:'Oswald',sans-serif;color:#e0e0e0;text-transform:uppercase;letter-spacing:1px;}
 h2{text-align:center;margin-bottom:40px;font-size:2.5em;position:relative;}
@@ -39,21 +39,16 @@ a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 .dark-bg{background:#222;}
 
 /* ---------------- ABOUT ---------------- */
-.about-layout{
-  display:grid;
-  grid-template-columns:220px 280px 1fr;
-  gap:50px;
-  align-items:start;
-}
+.about-layout{display:grid;grid-template-columns:220px 280px 1fr;gap:50px;align-items:center;}
 .cert-sidebar{display:flex;flex-direction:column;gap:20px;}
 .cert-tab{background:#2a2a2a;color:#fff;border-left:4px solid #ff6600;border-radius:6px;padding:15px 10px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:bold;transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;}
 .cert-tab:hover{background:#ff6600;color:#1a1a1a;transform:translateX(5px) scale(1.02);box-shadow:0 6px 20px rgba(255,102,0,0.35);}
 .cert-icon{font-size:1.4em;}
 .cert-label{text-transform:uppercase;font-family:'Oswald',sans-serif;}
 .profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;transition: transform 0.3s ease, box-shadow 0.3s ease;}
-.profile-photo:hover{transform: scale(1.05);box-shadow: 0 12px 25px rgba(255,102,0,0.35);}
-.profile-content{display:flex;flex-direction:column;gap:10px;}
-.profile-content p{margin-bottom:0.75rem;line-height:1.5;}
+.profile-photo:hover{transform: scale(1.05);box-shadow:0 12px 25px rgba(255,102,0,0.35);}
+.profile-content{display:flex;flex-direction:column;gap:8px;}
+.profile-content p{margin:0 0 0.65rem 0;line-height:1.5;}
 
 /* ---------------- SKILLS ---------------- */
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
@@ -89,21 +84,9 @@ footer p{margin:0;}
 @media(max-width:600px){
   .skills-grid{grid-template-columns:1fr;}
   .hero h1{font-size:2.4em;}
-  .about-layout{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-  .cert-sidebar{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    margin-bottom:20px;
-  }
-  .profile-content{
-    align-items:center;
-    text-align:center;
-  }
+  .about-layout{grid-template-columns:1fr;gap:30px;}
+  .cert-sidebar{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px;}
+  .profile-content{text-align:center;align-items:center;}
 }
 </style>
 </head>
@@ -121,6 +104,7 @@ footer p{margin:0;}
   </div>
 </nav>
 
+<main>
 <!-- HERO -->
 <header class="hero">
   <div class="hero-content">
@@ -138,27 +122,13 @@ footer p{margin:0;}
     <div class="about-layout">
       <!-- Certification Sidebar -->
       <div class="cert-sidebar">
-        <div class="cert-tab" onclick="openCertModal('repository/redseal.png','Red Seal Journeyman Welder Certification')">
-          <span class="cert-icon">🏆</span><span class="cert-label">Red Seal</span>
-        </div>
-        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')">
-          <span class="cert-icon">🛠️</span><span class="cert-label">CWB</span>
-        </div>
-        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')">
-          <span class="cert-icon">✅</span><span class="cert-label">Safety</span>
-        </div>
-        <div class="cert-tab" onclick="openCertModal('repository/firstaid.png','First Aid Certification')">
-          <span class="cert-icon">🚑</span><span class="cert-label">First Aid</span>
-        </div>
-        <div class="cert-tab" onclick="openCertModal('repository/confinedspace.png','Confined Space Certification')">
-          <span class="cert-icon">⚠️</span><span class="cert-label">Confined Space</span>
-        </div>
-        <div class="cert-tab" onclick="openCertModal('repository/forklift.png','Forklift Certification')">
-          <span class="cert-icon">🏗️</span><span class="cert-label">Forklift</span>
-        </div>
-        <div class="cert-tab" onclick="openCertModal('repository/weldinginspector.png','Welding Inspector Certification')">
-          <span class="cert-icon">🔍</span><span class="cert-label">Welding Inspector</span>
-        </div>
+        <div class="cert-tab" onclick="openCertModal('repository/redseal.png','Red Seal Journeyman Welder Certification')"><span class="cert-icon">🏆</span><span class="cert-label">Red Seal</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')"><span class="cert-icon">🛠️</span><span class="cert-label">CWB</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')"><span class="cert-icon">✅</span><span class="cert-label">Safety</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/firstaid.png','First Aid Certification')"><span class="cert-icon">🚑</span><span class="cert-label">First Aid</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/confinedspace.png','Confined Space Certification')"><span class="cert-icon">⚠️</span><span class="cert-label">Confined Space</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/forklift.png','Forklift Certification')"><span class="cert-icon">🏗️</span><span class="cert-label">Forklift</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/weldinginspector.png','Welding Inspector Certification')"><span class="cert-icon">🔍</span><span class="cert-label">Welding Inspector</span></div>
       </div>
 
       <!-- Profile Image -->
@@ -220,6 +190,7 @@ footer p{margin:0;}
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -236,21 +207,19 @@ footer p{margin:0;}
 </div>
 
 <script>
-window.addEventListener("load", function(){window.scrollTo(0,0);});
+window.addEventListener("load",()=>{window.scrollTo(0,0);});
 var modal=document.getElementById("myModal");
 var images=document.querySelectorAll(".gallery-item img");
 var modalImg=document.getElementById("img01");
 var captionText=document.getElementById("caption");
 function openCertModal(src,caption){modal.style.display="block";modalImg.src=src;captionText.innerHTML=caption;}
-images.forEach(function(img){img.onclick=function(){modal.style.display="block";modalImg.src=this.src;captionText.innerHTML=this.nextElementSibling.innerText;}})
-var span=document.getElementsByClassName("close")[0];
-span.onclick=function(){modal.style.display="none";}
-window.onclick=function(event){if(event.target==modal){modal.style.display="none";}}
+images.forEach(img=>{img.onclick=()=>{modal.style.display="block";modalImg.src=img.src;captionText.innerHTML=img.nextElementSibling.innerText;}});
+document.getElementsByClassName("close")[0].onclick=()=>{modal.style.display="none";}
+window.onclick=e=>{if(e.target==modal){modal.style.display="none";}};
 const sections=document.querySelectorAll("section");
 const navLinks=document.querySelectorAll(".nav-links a");
-window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const sectionTop=section.offsetTop-80;const sectionHeight=section.clientHeight;if(window.scrollY>=sectionTop && window.scrollY<sectionTop+sectionHeight){current=section.getAttribute("id");}});navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});});
+window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const top=section.offsetTop-80;const height=section.clientHeight;if(window.scrollY>=top&&window.scrollY<top+height){current=section.getAttribute("id");}});navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});});
 </script>
 
 </body>
-</html>
 </html>
