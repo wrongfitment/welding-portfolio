@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Jacob Langton-Cooke | Red Seal Welder & Structural Fitter</title>
-<meta name="description" content="Jacob Langton-Cooke - Red Seal Welder and Structural Fitter with 5+ years experience in fabrication, industrial welding, aluminum and stainless steel work.">
+
+<meta name="description" content="Jacob Langton-Cooke - Red Seal Welder and Structural Fitter with experience in fabrication, industrial welding, aluminum work, structural steel, stairs, railings, and custom truck decks.">
 <meta name="keywords" content="Welder, Structural Fitter, Red Seal Welder, Welding Services, Metal Fabrication, Alberta Welder">
 <meta name="author" content="Jacob Langton-Cooke">
+
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 <style>
-/* ---------------- GLOBAL ---------------- */
 html{scroll-behavior:smooth;scroll-padding-top:80px;}
 body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#1a1a1a;color:#f0f0f0;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;}
 .container{max-width:1200px;margin:0 auto;padding:0 20px;}
@@ -18,13 +21,11 @@ h2{text-align:center;margin-bottom:40px;font-size:2.5em;position:relative;}
 h2::after{content:'';display:block;width:60px;height:4px;background:#ff6600;margin:12px auto 0;border-radius:2px;}
 a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 
-/* ---------------- NAVIGATION ---------------- */
 .top-nav{background:rgba(17,17,17,0.95);padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.6);backdrop-filter:blur(4px);}
 .nav-links{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:25px;}
 .nav-links a{color:#f0f0f0;font-weight:700;text-transform:uppercase;font-size:0.9em;padding:8px 16px;border-radius:4px;transition:0.25s;}
 .nav-links a:hover,.nav-links a.active{background:#ff6600;color:#1a1a1a;}
 
-/* ---------------- HERO ---------------- */
 .hero{position:relative;height:100vh;background:url('dehyk.jpeg') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;}
 .hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:1;}
 .hero-content{position:relative;z-index:2;padding:20px;}
@@ -34,65 +35,61 @@ a{color:#ff6a00;text-decoration:none;transition:0.25s ease;}
 .cta-button,.email-button{display:inline-block;margin-top:20px;padding:14px 32px;background:#ff6600;color:#fff;font-weight:bold;border-radius:6px;text-transform:uppercase;letter-spacing:1px;transition:0.25s;}
 .cta-button:hover,.email-button:hover{background:#ff7f24;transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,102,0,0.35);}
 
-/* ---------------- SECTIONS ---------------- */
 .section{padding:100px 0;}
 .dark-bg{background:#222;}
 
-/* ---------------- ABOUT ---------------- */
 .about-layout{display:grid;grid-template-columns:220px 280px 1fr;gap:50px;align-items:center;}
 .cert-sidebar{display:flex;flex-direction:column;gap:20px;}
-.cert-tab{background:#2a2a2a;color:#fff;border-left:4px solid #ff6600;border-radius:6px;padding:15px 10px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:bold;transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;}
+.cert-tab{background:#2a2a2a;color:#fff;border-left:4px solid #ff6600;border-radius:6px;padding:15px 10px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:bold;transition:0.3s ease;}
 .cert-tab:hover{background:#ff6600;color:#1a1a1a;transform:translateX(5px) scale(1.02);box-shadow:0 6px 20px rgba(255,102,0,0.35);}
 .cert-icon{font-size:1.4em;}
 .cert-label{text-transform:uppercase;font-family:'Oswald',sans-serif;}
-.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;transition: transform 0.3s ease, box-shadow 0.3s ease;}
-.profile-photo:hover{transform: scale(1.05);box-shadow:0 12px 25px rgba(255,102,0,0.35);}
+.profile-photo{width:280px;border-radius:8px;border:3px solid #ff6600;transition:0.3s ease;}
+.profile-photo:hover{transform:scale(1.05);box-shadow:0 12px 25px rgba(255,102,0,0.35);}
 .profile-content{display:flex;flex-direction:column;gap:8px;}
 .profile-content p{margin:0 0 0.65rem 0;line-height:1.5;}
 
-/* ---------------- SKILLS ---------------- */
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
 .skill-item{background:#333;padding:25px 10px;border-radius:6px;text-align:center;font-weight:bold;min-height:80px;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;text-transform:uppercase;transition:0.25s;}
 .skill-item:hover{background:#ff6600;color:#1a1a1a;transform:translateY(-3px);}
 
-/* ---------------- GALLERY ---------------- */
+.gallery-group{margin-bottom:60px;}
+.gallery-group h3{color:#ff6600;font-size:1.7rem;margin-bottom:25px;padding-left:15px;border-left:4px solid #ff6600;}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
-.gallery-item{background:#2a2a2a;border-radius:8px;overflow:hidden;}
+.gallery-item{background:#2a2a2a;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.4);transition:0.3s ease;}
+.gallery-item:hover{transform:translateY(-5px);}
 .gallery-item img{width:100%;height:250px;object-fit:cover;cursor:pointer;transition:0.35s;}
 .gallery-item img:hover{transform:scale(1.08);filter:brightness(1.1);}
+.gallery-item p{padding:15px;color:#ddd;line-height:1.5;font-size:0.95rem;margin:0;}
 
-/* ---------------- MODAL ---------------- */
 .modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);padding-top:80px;}
 .modal-content{margin:auto;display:block;max-width:90%;max-height:80vh;border:3px solid #ff6600;animation:zoom 0.3s;}
 @keyframes zoom{from{transform:scale(0.85)}to{transform:scale(1)}}
 .close{position:absolute;top:30px;right:40px;color:#fff;font-size:50px;cursor:pointer;font-weight:bold;}
 #caption{text-align:center;color:#ccc;font-family:'Oswald',sans-serif;font-size:1.5rem;padding:10px 0;}
 
-/* ---------------- CONTACT ---------------- */
 #contact .container{text-align:center;}
 .social-links{margin-top:25px;display:flex;justify-content:center;gap:25px;}
 .social-links a{font-weight:bold;color:white;transition:0.25s;}
 .social-links a:hover{color:#ff6600;}
 
-/* ---------------- FOOTER ---------------- */
 footer{width:100%;text-align:center;padding:20px 0;background:#111;color:#ccc;font-size:0.9em;margin-top:60px;}
 footer p{margin:0;}
 
-/* ---------------- RESPONSIVE ---------------- */
 @media(max-width:1024px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:900px){.about-layout{grid-template-columns:1fr;}.hero h1{font-size:3em;}}
 @media(max-width:600px){
-  .skills-grid{grid-template-columns:1fr;}
-  .hero h1{font-size:2.4em;}
-  .about-layout{grid-template-columns:1fr;gap:30px;}
-  .cert-sidebar{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px;}
-  .profile-content{text-align:center;align-items:center;}
+ .skills-grid{grid-template-columns:1fr;}
+ .hero h1{font-size:2.4em;}
+ .about-layout{grid-template-columns:1fr;gap:30px;}
+ .cert-sidebar{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px;}
+ .profile-content{text-align:center;align-items:center;}
 }
 </style>
 </head>
+
 <body>
 
-<!-- NAV -->
 <nav class="top-nav">
   <div class="container">
     <ul class="nav-links">
@@ -105,7 +102,7 @@ footer p{margin:0;}
 </nav>
 
 <main>
-<!-- HERO -->
+
 <header class="hero">
   <div class="hero-content">
     <h1>Jacob Langton-Cooke</h1>
@@ -115,38 +112,33 @@ footer p{margin:0;}
   </div>
 </header>
 
-<!-- ABOUT -->
 <section id="about" class="section">
   <div class="container">
     <h2>About Me</h2>
+
     <div class="about-layout">
-      <!-- Certification Sidebar -->
       <div class="cert-sidebar">
-        <div class="cert-tab" onclick="openCertModal('https://github.com/wrongfitment/welding-portfolio/blob/main/github%20image%20repository/redseal.png','Red Seal Journeyman Welder Certification')"><span class="cert-icon">🏆</span><span class="cert-label">Red Seal</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')"><span class="cert-icon">🛠️</span><span class="cert-label">CWB</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')"><span class="cert-icon">✅</span><span class="cert-label">Safety</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/firstaid.png','First Aid Certification')"><span class="cert-icon">🚑</span><span class="cert-label">First Aid</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/confinedspace.png','Confined Space Certification')"><span class="cert-icon">⚠️</span><span class="cert-label">Confined Space</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/forklift.png','Forklift Certification')"><span class="cert-icon">🏗️</span><span class="cert-label">Forklift</span></div>
-        <div class="cert-tab" onclick="openCertModal('repository/weldinginspector.png','Welding Inspector Certification')"><span class="cert-icon">🔍</span><span class="cert-label">Welding Inspector</span></div>
+        <div class="cert-tab" onclick="openCertModal('github image repository/redseal.png','Red Seal Journeyman Welder Certification')"><span class="cert-label">Red Seal</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/cwb.png','CWB Certification')"><span class="cert-label">CWB</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/safety.png','Safety Certification')"><span class="cert-label">Safety</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/firstaid.png','First Aid Certification')"><span class="cert-label">First Aid</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/confinedspace.png','Confined Space Certification')"><span class="cert-label">Confined Space</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/forklift.png','Forklift Certification')"><span class="cert-label">Forklift</span></div>
+        <div class="cert-tab" onclick="openCertModal('repository/weldinginspector.png','Welding Inspector Certification')"><span class="cert-label">Welding Inspector</span></div>
       </div>
 
-      <!-- Profile Image -->
       <img src="20190924_092819.jpg" alt="Jacob Langton-Cooke in work gear" class="profile-photo" loading="lazy">
 
-      <!-- Description -->
       <div class="profile-content">
         <p>As a proud Albertan, I take great pride in the quality of work, craftsmanship, and education—both my own and that of the professionals I’ve had the privilege of working alongside in the welding and manufacturing industry.</p>
-        <p>I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades. I believe these qualities make me a valuable addition to your team.</p>
-        <p>I hold a Red Seal Certification in Welding from SAIT and have over five years of hands-on experience in the welding and manufacturing sector. Throughout my career, I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision. I am fully equipped with my own tools for layout, fabrication, and finishing—whether for large structural builds or smaller, detailed projects—and I have reliable transportation.</p>
+        <p>I am available to work full-time, including days, nights, and weekends. I bring with me a strong work ethic, extensive industry experience, and a genuine passion for helping others develop their skills in the trades.</p>
+        <p>I hold a Red Seal Certification in Welding from SAIT and have hands-on experience in the welding and manufacturing sector. I have developed proficiency in a wide range of welding processes and consistently produce high-quality work with efficiency and precision.</p>
         <p>I maintain a professional and respectful demeanor in all workplace interactions and am frequently recognized for my reliability, accuracy, and attention to detail through every stage of a project.</p>
-        <p>Thank you for taking the time to view my webpage. I look forward to the opportunity to discuss how I can contribute to the positive and productive environment at your company.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="section dark-bg">
   <div class="container">
     <h2>Skills & Services</h2>
@@ -163,43 +155,96 @@ footer p{margin:0;}
   </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery" class="section">
   <div class="container">
     <h2>Project Gallery</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="Close-up of clean FCAW weld bead" loading="lazy"><p>Multipass weld — Process: FCAW</p></div>
-      <div class="gallery-item"><img src="20220124_085221.jpg" alt="Large steel hopper structure" loading="lazy"><p>Exterior of large hopper unit</p></div>
-      <div class="gallery-item"><img src="20160509_094719.jpg" alt="Precision TIG weld on aluminum frame" loading="lazy"><p>Precision aluminum weld — Process: GTAW</p></div>
-      <div class="gallery-item"><img src="20160509_094657.jpg" alt="Aluminum sled deck fabrication" loading="lazy"><p>Aluminum sled-deck for pickup truck</p></div>
-      <div class="gallery-item"><img src="20161004_103558.jpg" alt="Custom handrail installation" loading="lazy"><p>Custom handrail for upper mezzanine</p></div>
-      <div class="gallery-item"><img src="20160701_043528.jpg" alt="Custom fabricated staircase" loading="lazy"><p>Custom staircase in office building</p></div>
+
+    <div class="gallery-group">
+      <h3>Industrial Process & Safety Fabrication</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="20150427_054337.jpg" alt="Large industrial processing system" loading="lazy"><p>Large-scale industrial processing system featuring structural steel, process piping, equipment integration, and precision assembly work.</p></div>
+        <div class="gallery-item"><img src="20220124_085221.jpg" alt="Large fabricated steel hopper structure" loading="lazy"><p>Large steel hopper unit showing structural fabrication, layout, fitting, and heavy shop-built assembly work.</p></div>
+        <div class="gallery-item"><img src="402.jpg" alt="Industrial safety cage" loading="lazy"><p>Industrial safety cage with mesh panels, access doors, warning signage, and reinforced frame.</p></div>
+      </div>
     </div>
+
+    <div class="gallery-group">
+      <h3>Structural Steel & Commercial Construction</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="20160526_135546.jpg" alt="Commercial structural steel frame" loading="lazy"><p>Commercial structural steel erection and layout work during early-stage building construction.</p></div>
+        <div class="gallery-item"><img src="20160712_142905 (1).jpg" alt="Structural steel commercial building" loading="lazy"><p>Structural steel integration with commercial framing systems during multi-stage construction.</p></div>
+        <div class="gallery-item"><img src="20161110_103350.jpg" alt="Finished commercial building exterior" loading="lazy"><p>Commercial building exterior showing completed structural and architectural steel work.</p></div>
+        <div class="gallery-item"><img src="20161110_103503.jpg" alt="Custom steel access gate" loading="lazy"><p>Custom fabricated steel access gate installed on a commercial site.</p></div>
+        <div class="gallery-item"><img src="20180523_080933.jpg" alt="Commercial steel frame under construction" loading="lazy"><p>Commercial structural steel framing during active construction.</p></div>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <h3>Staircases, Railings & Architectural Metalwork</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="20160307_154856.jpg" alt="Steel stair railing installation" loading="lazy"><p>Custom fabricated stair railing system designed for durability, safety, and clean fitment.</p></div>
+        <div class="gallery-item"><img src="20160307_155108.jpg" alt="Interior stair railing fabrication" loading="lazy"><p>Interior custom stair railing fabricated for a wood-framed stairwell.</p></div>
+        <div class="gallery-item"><img src="20160701_043528.jpg" alt="Commercial staircase installation" loading="lazy"><p>Commercial steel staircase installed during interior construction.</p></div>
+        <div class="gallery-item"><img src="20161004_103558.jpg" alt="Mezzanine guardrail installation" loading="lazy"><p>White powder-coated mezzanine guardrail installed for commercial safety access.</p></div>
+        <div class="gallery-item"><img src="20161004_103724.jpg" alt="Finished stair railing system" loading="lazy"><p>Finished interior stair railing system with clean lines and commercial-grade fitment.</p></div>
+        <div class="gallery-item"><img src="20161018_160834.jpg" alt="Interior fabricated steel staircase" loading="lazy"><p>Interior steel staircase fabrication and installation for commercial construction.</p></div>
+        <div class="gallery-item"><img src="20161021_144102.jpg" alt="Steel staircase with landing" loading="lazy"><p>Structural staircase with integrated platform and railing system fabricated for commercial use.</p></div>
+        <div class="gallery-item"><img src="20180824_100315.jpg" alt="Roof access safety railing" loading="lazy"><p>Roof access safety railing and ladder system fabricated for industrial rooftop access.</p></div>
+        <div class="gallery-item"><img src="20180906_133735.jpg" alt="Exterior industrial staircase" loading="lazy"><p>Exterior galvanized staircase and handrail system built for industrial and winter conditions.</p></div>
+        <div class="gallery-item"><img src="20190924_092819.jpg" alt="Large fabricated steel staircase" loading="lazy"><p>Heavy-duty steel staircase fabricated and installed inside a commercial facility.</p></div>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <h3>Precision Aluminum Welding</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="20160509_094719.jpg" alt="Precision aluminum TIG weld" loading="lazy"><p>Precision aluminum TIG weld showcasing clean bead consistency and controlled heat input.</p></div>
+        <div class="gallery-item"><img src="20160509_094657.jpg" alt="Aluminum frame fabrication" loading="lazy"><p>Aluminum frame fabrication with clean welds and lightweight structural layout.</p></div>
+        <div class="gallery-item"><img src="qo97ekfn31ne1.jpeg" alt="Close-up of clean multipass weld bead" loading="lazy"><p>Close-up multipass weld showing bead consistency, tie-in, and weld profile.</p></div>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <h3>Custom Truck Deck Fabrication</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="20180618_160201 (1).jpg" alt="Truck deck fabrication frame" loading="lazy"><p>Custom truck deck frame in fabrication with reinforced rails and storage layout.</p></div>
+        <div class="gallery-item"><img src="20180618_160222.jpg" alt="Custom truck deck fabrication" loading="lazy"><p>Custom heavy-duty truck deck fabrication with integrated storage and reinforced structure.</p></div>
+        <div class="gallery-item"><img src="20180618_160233 (1).jpg" alt="Truck deck fabrication in progress" loading="lazy"><p>Fabrication-stage truck deck showing storage compartments, reinforced framing, and precision fitting.</p></div>
+        <div class="gallery-item"><img src="20180717_122505 (1).jpg" alt="Finished black service flat deck" loading="lazy"><p>Finished black service flat deck with integrated storage cabinets and polished aluminum compartments.</p></div>
+        <div class="gallery-item"><img src="20180823_150800 (1).jpg" alt="Truck deck headache rack fabrication" loading="lazy"><p>Truck deck fabrication showing headache rack, rear structure, and heavy-duty deck framing.</p></div>
+        <div class="gallery-item"><img src="20180824_100328 (1).jpg" alt="Truck deck structural fabrication" loading="lazy"><p>Structural fabrication of custom flat deck with integrated headache rack and reinforced frame rails.</p></div>
+        <div class="gallery-item"><img src="20180824_100504.jpg" alt="Custom service body storage compartment" loading="lazy"><p>Interior storage compartment detail with pull-out drawers and finished cabinet layout.</p></div>
+        <div class="gallery-item"><img src="20180824_141140.jpg" alt="Finished black service truck deck" loading="lazy"><p>Completed service truck deck with rear lighting, storage, mesh sides, and finished black coating.</p></div>
+        <div class="gallery-item"><img src="20190417_142834.jpg" alt="Finished black flat deck truck" loading="lazy"><p>Completed custom flat deck installation featuring integrated lighting, storage, and hardwood decking.</p></div>
+        <div class="gallery-item"><img src="20170606_175757.jpg" alt="Red municipal service truck deck" loading="lazy"><p>Custom municipal service deck fabricated for durability, utility access, and commercial fleet use.</p></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section dark-bg">
   <div class="container">
     <h2>Contact Me</h2>
     <p>Ready to discuss your next project? Get in touch.</p>
+
     <a class="email-button" href="mailto:Jacoblangtoncooke@outlook.com">Send Email</a>
+
     <div class="social-links">
       <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
+
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <p>© 2026 Jacob Langton-Cooke. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- MODAL -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
@@ -208,17 +253,56 @@ footer p{margin:0;}
 
 <script>
 window.addEventListener("load",()=>{window.scrollTo(0,0);});
+
 var modal=document.getElementById("myModal");
 var images=document.querySelectorAll(".gallery-item img");
 var modalImg=document.getElementById("img01");
 var captionText=document.getElementById("caption");
-function openCertModal(src,caption){modal.style.display="block";modalImg.src=src;captionText.innerHTML=caption;}
-images.forEach(img=>{img.onclick=()=>{modal.style.display="block";modalImg.src=img.src;captionText.innerHTML=img.nextElementSibling.innerText;}});
-document.getElementsByClassName("close")[0].onclick=()=>{modal.style.display="none";}
-window.onclick=e=>{if(e.target==modal){modal.style.display="none";}};
+
+function openCertModal(src,caption){
+  modal.style.display="block";
+  modalImg.src=src;
+  captionText.innerHTML=caption;
+}
+
+images.forEach(img=>{
+  img.onclick=()=>{
+    modal.style.display="block";
+    modalImg.src=img.src;
+    captionText.innerHTML=img.nextElementSibling.innerText;
+  }
+});
+
+document.getElementsByClassName("close")[0].onclick=()=>{
+  modal.style.display="none";
+}
+
+window.onclick=e=>{
+  if(e.target==modal){
+    modal.style.display="none";
+  }
+};
+
 const sections=document.querySelectorAll("section");
 const navLinks=document.querySelectorAll(".nav-links a");
-window.addEventListener("scroll",()=>{let current="";sections.forEach(section=>{const top=section.offsetTop-80;const height=section.clientHeight;if(window.scrollY>=top&&window.scrollY<top+height){current=section.getAttribute("id");}});navLinks.forEach(link=>{link.classList.remove("active");if(link.getAttribute("href")==="#"+current){link.classList.add("active");}});});
+
+window.addEventListener("scroll",()=>{
+  let current="";
+  sections.forEach(section=>{
+    const top=section.offsetTop-80;
+    const height=section.clientHeight;
+    if(window.scrollY>=top && window.scrollY<top+height){
+      current=section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link=>{
+    link.classList.remove("active");
+    if(link.getAttribute("href")==="#"+current){
+      link.classList.add("active");
+    }
+  });
+});
 </script>
 
 </body>
