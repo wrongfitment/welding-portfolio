@@ -204,7 +204,9 @@ body::after{
 /* certs */
 .certs{margin-top:2.4rem;}
 .certs h3{font-size:.78rem;letter-spacing:.3em;color:var(--ink-dim);margin-bottom:1.1rem;font-family:var(--body);font-weight:500;}
-.cert-row{display:flex;flex-wrap:wrap;gap:.6rem;}
+.cert-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;}
+.cert-row .badge{width:100%;justify-content:center;text-align:center;}
+@media(max-width:600px){.cert-row{grid-template-columns:repeat(2,1fr);}}
 .badge{
   display:inline-flex;align-items:center;gap:.55rem;
   padding:.6rem 1.1rem;border:1px solid var(--line);border-radius:100px;
@@ -304,7 +306,7 @@ footer .wrap{display:contents;}
 
 <!-- NAV -->
 <nav class="nav" id="nav" aria-label="Main navigation">
-  <a class="brand" href="#top">JLC<em>.</em>WELD</a>
+  <a class="brand" href="#top">JLC<em>.</em>WELDS</a>
   <ul>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
@@ -354,10 +356,10 @@ footer .wrap{display:contents;}
       <p class="reveal">Eight jobs that show the range — stainless, structural steel, custom truck decks, and clean multipass welds. Click any project to see it up close.</p>
     </div>
     <div class="work-grid">
-      <button class="card reveal" data-caption="Stainless steel weld detail — corner joint">
+      <button class="card reveal" data-caption="Exterior of large hopper unit — Structural fabrication">
         <span class="card-num">01</span>
-        <span class="card-media"><img src="assets/stainless-weld.jpg" alt="Stainless steel corner weld detail" loading="lazy"></span>
-        <span class="card-body"><h3>Stainless Weld Detail</h3><span class="meta">Stainless</span></span>
+        <span class="card-media"><img src="assets/hopper.jpg" alt="Large steel hopper structure suspended from ceiling" loading="lazy"></span>
+        <span class="card-body"><h3>Industrial Hopper</h3><span class="meta">Structural</span></span>
       </button>
       <button class="card reveal" data-caption="Multipass weld — Process: FCAW — CWB W47.1 qualified">
         <span class="card-num">02</span>
@@ -369,10 +371,10 @@ footer .wrap{display:contents;}
         <span class="card-media"><img src="assets/truck-deck.jpg" alt="Finished custom flatbed deck installed on pickup truck" loading="lazy"></span>
         <span class="card-body"><h3>Custom Truck Deck</h3><span class="meta">Fab to Finish</span></span>
       </button>
-      <button class="card reveal" data-caption="Exterior of large hopper unit — Structural fabrication">
+      <button class="card reveal" data-caption="Stainless steel weld detail — corner joint">
         <span class="card-num">04</span>
-        <span class="card-media"><img src="assets/hopper.jpg" alt="Large steel hopper structure suspended from ceiling" loading="lazy"></span>
-        <span class="card-body"><h3>Industrial Hopper</h3><span class="meta">Structural</span></span>
+        <span class="card-media"><img src="assets/stainless-weld.jpg" alt="Stainless steel corner weld detail" loading="lazy"></span>
+        <span class="card-body"><h3>Stainless Weld Detail</h3><span class="meta">Stainless</span></span>
       </button>
       <button class="card reveal" data-caption="Industrial process skid module with structural frame and platforms">
         <span class="card-num">05</span>
