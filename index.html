@@ -4,12 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jacob Langton-Cooke — Red Seal Welder & Structural Fitter</title>
-<meta name="description" content="Jacob Langton-Cooke — Red Seal Welder and Structural Fitter. 5+ years of fabrication, structural steel, aluminum and stainless work in Alberta.">
+<meta name="description" content="Jacob Langton-Cooke — Red Seal Welder and Structural Fitter. A decade-plus of fabrication, structural steel, aluminum and stainless work in Alberta.">
 <meta name="keywords" content="Welder, Structural Fitter, Red Seal Welder, Welding Services, Metal Fabrication, Alberta Welder">
 <meta name="author" content="Jacob Langton-Cooke">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://wrongfitment.github.io/welding-portfolio/">
+<meta name="theme-color" content="#0c0b0a">
+<meta property="og:title" content="Jacob Langton-Cooke — Red Seal Welder &amp; Structural Fitter">
+<meta property="og:description" content="Red Seal Welder, CWB W47.1 qualified, ABSA B Pressure. A decade-plus of structural steel, aluminum and stainless fabrication in Alberta.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wrongfitment.github.io/welding-portfolio/">
+<meta property="og:image" content="https://wrongfitment.github.io/welding-portfolio/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c0b0a'/%3E%3Cpath d='M32 8 L37 27 L56 32 L37 37 L32 56 L27 37 L8 32 L27 27 Z' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/hero.webp" type="image/webp">
 <style>
 /* ============ TOKENS ============ */
 :root{
@@ -77,13 +87,27 @@ body::after{
 .nav .avail{display:flex;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);}
 .nav .avail i{width:.5rem;height:.5rem;border-radius:50%;background:#5eff8a;animation:pulse 2s infinite;font-style:normal;}
 @keyframes pulse{50%{opacity:.35;}}
-@media(max-width:760px){.nav ul{display:none;}.nav .avail span{display:none;}}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px;}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s;}
+.nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav.open .nav-toggle span:nth-child(2){opacity:0;}
+.nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:760px){
+  .nav .avail span{display:none;}
+  .nav-toggle{display:flex;}
+  .nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:rgba(12,11,10,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+    padding:.5rem 0 1rem;}
+  .nav.open ul{display:flex;}
+  .nav ul a{display:block;padding:.9rem clamp(1.25rem,4vw,3rem);}
+}
 
 /* ============ HERO ============ */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
   position:relative;padding-top:6rem;
   background:url('assets/hero.jpg') center/cover no-repeat;
+  background-image:image-set(url('assets/hero.webp') type('image/webp'),url('assets/hero.jpg') type('image/jpeg'));
 }
 .hero::before{
   content:'';position:absolute;inset:0;z-index:0;
@@ -154,12 +178,14 @@ body::after{
 .card{position:relative;cursor:pointer;border:0;background:none;padding:0;text-align:left;color:inherit;font:inherit;}
 .card:nth-child(even){transform:translateY(clamp(1.5rem,4vw,3.5rem));}
 .card-media{position:relative;overflow:hidden;background:var(--bg-raise);}
+.card-media picture{display:block;}
 .card-media img{
   width:100%;aspect-ratio:4/3;object-fit:cover;
   filter:grayscale(.55) contrast(1.05);
   transition:transform .8s var(--ease),filter .6s;
 }
-.card:hover .card-media img,.card:focus-visible .card-media img{transform:scale(1.06);filter:grayscale(0) contrast(1.05);}
+.card:hover .card-media img,.card:focus-visible .card-media picture{display:block;}
+.card-media img{transform:scale(1.06);filter:grayscale(0) contrast(1.05);}
 .card-num{
   position:absolute;top:-1.1rem;left:-.4rem;z-index:2;
   font-family:var(--display);font-size:clamp(2.2rem,4vw,3.2rem);
@@ -178,6 +204,7 @@ body::after{
 .about{background:var(--bg-raise);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2.5rem,6vw,6rem);align-items:start;}
 .about-photos{position:relative;}
+.about-photos picture{display:block;}
 .about-photos .main{
   width:100%;aspect-ratio:3/4;object-fit:cover;filter:contrast(1.05);
 }
@@ -254,6 +281,26 @@ body::after{
   transition:all .3s var(--ease);
 }
 .socials a:hover{border-color:var(--heat);color:var(--heat);transform:translateY(-2px);}
+.socials .sc-copy{
+  padding:.7rem 1.4rem;border:1px solid var(--line);border-radius:100px;background:none;
+  font-family:var(--body);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-dim);cursor:pointer;transition:all .3s var(--ease);
+}
+.socials .sc-copy:hover{border-color:var(--heat);color:var(--heat);transform:translateY(-2px);}
+.socials .sc-hot{border-color:var(--heat);color:var(--heat);}
+.socials .sc-hot:hover{background:var(--heat);color:#0c0b0a;}
+
+/* skip link */
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--heat);color:#0c0b0a;
+  padding:.8rem 1.4rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;}
+.skip:focus{left:0;}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;
+  background:var(--heat);z-index:150;transition:transform .1s linear;}
+
+/* footer back-to-top */
+footer a:hover{color:var(--heat);}
 
 /* ============ FOOTER ============ */
 footer{
@@ -281,6 +328,14 @@ footer .wrap{display:contents;}
   transition:all .3s;
 }
 .modal-close:hover{border-color:var(--heat);color:var(--heat);transform:rotate(90deg);}
+.modal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(12,11,10,.6);
+  border:1px solid var(--line);border-radius:50%;width:3rem;height:3rem;color:var(--ink);
+  font-size:1.3rem;cursor:pointer;transition:all .3s;display:none;align-items:center;justify-content:center;}
+.modal.has-nav .modal-nav{display:flex;}
+.modal-nav:hover{border-color:var(--heat);color:var(--heat);}
+.modal-prev{left:1.25rem;}
+.modal-next{right:1.25rem;}
+@media(max-width:600px){.modal-prev{left:.5rem;}.modal-next{right:.5rem;}}
 
 /* ============ REVEAL ON SCROLL ============ */
 /* only hidden when JS is confirmed running (html.js) — never blanks the page */
@@ -294,10 +349,39 @@ footer .wrap{display:contents;}
   html{scroll-behavior:auto;}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Jacob Langton-Cooke",
+  "jobTitle":"Red Seal Journeyman Welder & Structural Fitter",
+  "url":"https://wrongfitment.github.io/welding-portfolio/",
+  "image":"https://wrongfitment.github.io/welding-portfolio/assets/portrait.jpg",
+  "telephone":"+1-403-828-8345",
+  "email":"Jacoblangtoncooke@outlook.com",
+  "address":{"@type":"PostalAddress","addressRegion":"AB","addressCountry":"CA"},
+  "sameAs":[
+    "https://www.linkedin.com/in/jacoblangtoncooke",
+    "https://www.instagram.com/jacoblangtoncookewelds"
+  ],
+  "alumniOf":{"@type":"EducationalOrganization","name":"SAIT (Southern Alberta Institute of Technology)"},
+  "hasCredential":[
+    {"@type":"EducationalOccupationalCredential","name":"Red Seal Interprovincial Journeyman Welder","credentialCategory":"certification"},
+    {"@type":"EducationalOccupationalCredential","name":"CWB Welder Qualification CSA W47.1 — FCAW/MCAW","credentialCategory":"certification"},
+    {"@type":"EducationalOccupationalCredential","name":"CWB Welder Qualification CSA W47.1 — SMAW","credentialCategory":"certification"},
+    {"@type":"EducationalOccupationalCredential","name":"ABSA Grade B Pressure Welder Certificate of Competency","credentialCategory":"certification"},
+    {"@type":"EducationalOccupationalCredential","name":"Common Safety Orientation — Energy Safety Canada","credentialCategory":"certification"},
+    {"@type":"EducationalOccupationalCredential","name":"Standard First Aid & CPR/AED Level C — Canadian Red Cross","credentialCategory":"certification"}
+  ],
+  "knowsAbout":["Structural steel fabrication","GMAW","GTAW","SMAW","FCAW","Blueprint reading and layout","Stainless steel welding","Aluminum welding","Pressure welding","Field welding and repair","Industrial rigging","Plasma and oxyacetylene cutting"]
+}
+</script>
 </head>
 <body>
 
 <!-- NAV -->
+<a class="skip" href="#work">Skip to work</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 <nav class="nav" id="nav" aria-label="Main navigation">
   <a class="brand" href="#top">JLC<em>.</em>WELDS</a>
   <ul>
@@ -306,7 +390,8 @@ footer .wrap{display:contents;}
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="avail" href="#contact"><i></i><span>Available for hire</span></a>
+  <a class="avail" href="tel:+14038288345"><i></i><span>Available for hire</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <main id="top">
@@ -320,9 +405,9 @@ footer .wrap{display:contents;}
         <span class="row"><span>Jacob</span></span>
         <span class="row"><span>Langton-Cooke</span></span>
       </h1>
-      <p class="hero-sub"><strong>Red Seal Welder &amp; Structural Fitter.</strong> Five-plus years turning blueprints into steel — structural builds, aluminum, stainless, and everything in between. Fully tooled, fully certified, ready to work.</p>
+      <p class="hero-sub"><strong>Red Seal Welder &amp; Structural Fitter.</strong> A decade-plus turning blueprints into steel — structural builds, aluminum, stainless, and everything in between. Fully tooled, fully certified, ready to work.</p>
       <div class="hero-cta">
-        <a class="btn btn-fill" href="#contact">Hire Me</a>
+        <a class="btn btn-fill" href="tel:+14038288345">Call 403-828-8345</a>
         <a class="btn btn-ghost" href="#work">See the Work</a>
       </div>
     </div>
@@ -333,7 +418,7 @@ footer .wrap{display:contents;}
     </div>
   </div>
   <div class="stats wrap" style="max-width:none;padding:0;">
-    <div class="stat reveal"><b>5<i>+</i></b><small>Years in the trade</small></div>
+    <div class="stat reveal"><b>10<i>+</i></b><small>Years in the trade</small></div>
     <div class="stat reveal"><b>Red<i> Seal</i></b><small>Journeyman Welder — SAIT</small></div>
     <div class="stat reveal"><b>W47<i>.1</i></b><small>CWB Qualified — FCAW &amp; SMAW</small></div>
     <div class="stat reveal"><b>24<i>/7</i></b><small>Days, nights &amp; weekends</small></div>
@@ -351,42 +436,42 @@ footer .wrap{display:contents;}
     <div class="work-grid">
       <button class="card reveal" data-caption="Exterior of large hopper unit — Structural fabrication">
         <span class="card-num">01</span>
-        <span class="card-media"><img src="assets/hopper.jpg" alt="Large steel hopper structure suspended from ceiling" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/hopper.webp" type="image/webp"><img src="assets/hopper.jpg" alt="Large steel hopper structure suspended from ceiling" loading="lazy"></picture></span>
         <span class="card-body"><h3>Industrial Hopper</h3><span class="meta">Structural</span></span>
       </button>
       <button class="card reveal" data-caption="Multipass weld — Process: FCAW — CWB W47.1 qualified">
         <span class="card-num">02</span>
-        <span class="card-media"><img src="assets/multipass-bead.jpg" alt="Close-up of clean multipass FCAW weld bead" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/multipass-bead.webp" type="image/webp"><img src="assets/multipass-bead.jpg" alt="Close-up of clean multipass FCAW weld bead" loading="lazy"></picture></span>
         <span class="card-body"><h3>Multipass Bead</h3><span class="meta">FCAW <i>·</i> CWB Qualified</span></span>
       </button>
       <button class="card reveal" data-caption="Custom flatbed truck deck — fabricated, finished, and installed">
         <span class="card-num">03</span>
-        <span class="card-media"><img src="assets/truck-deck.jpg" alt="Finished custom flatbed deck installed on pickup truck" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/truck-deck.webp" type="image/webp"><img src="assets/truck-deck.jpg" alt="Finished custom flatbed deck installed on pickup truck" loading="lazy"></picture></span>
         <span class="card-body"><h3>Custom Truck Deck</h3><span class="meta">Fab to Finish</span></span>
       </button>
       <button class="card reveal" data-caption="Stainless steel weld detail — corner joint">
         <span class="card-num">04</span>
-        <span class="card-media"><img src="assets/stainless-weld.jpg" alt="Stainless steel corner weld detail" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/stainless-weld.webp" type="image/webp"><img src="assets/stainless-weld.jpg" alt="Stainless steel corner weld detail" loading="lazy"></picture></span>
         <span class="card-body"><h3>Stainless Weld Detail</h3><span class="meta">Stainless</span></span>
       </button>
       <button class="card reveal" data-caption="Industrial process skid module with structural frame and platforms">
         <span class="card-num">05</span>
-        <span class="card-media"><img src="assets/process-skid.jpg" alt="Industrial process skid module with structural steel frame" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/process-skid.webp" type="image/webp"><img src="assets/process-skid.jpg" alt="Industrial process skid module with structural steel frame" loading="lazy"></picture></span>
         <span class="card-body"><h3>Process Skid Module</h3><span class="meta">Industrial</span></span>
       </button>
       <button class="card reveal" data-caption="Custom handrail for upper mezzanine — layout and install">
         <span class="card-num">06</span>
-        <span class="card-media"><img src="assets/handrail.jpg" alt="Custom handrail installation on upper mezzanine" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/handrail.webp" type="image/webp"><img src="assets/handrail.jpg" alt="Custom handrail installation on upper mezzanine" loading="lazy"></picture></span>
         <span class="card-body"><h3>Mezzanine Handrail</h3><span class="meta">Layout &amp; Install</span></span>
       </button>
       <button class="card reveal" data-caption="Custom steel staircase in office building">
         <span class="card-num">07</span>
-        <span class="card-media"><img src="assets/staircase.jpg" alt="Custom fabricated steel staircase in office building" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/staircase.webp" type="image/webp"><img src="assets/staircase.jpg" alt="Custom fabricated steel staircase in office building" loading="lazy"></picture></span>
         <span class="card-body"><h3>Office Staircase</h3><span class="meta">Custom Fab</span></span>
       </button>
       <button class="card reveal" data-caption="Aluminum sled-deck for pickup truck">
         <span class="card-num">08</span>
-        <span class="card-media"><img src="assets/sled-deck.jpg" alt="Aluminum sled deck fabrication for pickup truck" loading="lazy"></span>
+        <span class="card-media"><picture><source srcset="assets/sled-deck.webp" type="image/webp"><img src="assets/sled-deck.jpg" alt="Aluminum sled deck fabrication for pickup truck" loading="lazy"></picture></span>
         <span class="card-body"><h3>Aluminum Sled Deck</h3><span class="meta">Fabrication</span></span>
       </button>
     </div>
@@ -399,13 +484,13 @@ footer .wrap{display:contents;}
     <p class="label"><span class="idx">02</span> About</p>
     <div class="about-grid">
       <div class="about-photos reveal">
-        <img class="main" src="assets/portrait.jpg" alt="Jacob Langton-Cooke" loading="lazy">
+        <picture><source srcset="assets/portrait.webp" type="image/webp"><img class="main" src="assets/portrait.jpg" alt="Jacob Langton-Cooke" loading="lazy"></picture>
       </div>
       <div class="about-copy">
         <h2 class="reveal">Proud Albertan.<br>Prouder of the <em>welds.</em></h2>
         <p class="reveal">I take real pride in craftsmanship — my own, and that of the professionals I've worked alongside in the welding and manufacturing industry. Quality work isn't a slogan to me; it's the standard every bead gets held to.</p>
         <p class="pull reveal">Frequently recognized for reliability, accuracy, and attention to detail through every stage of a project.</p>
-        <p class="reveal">I hold a <strong>Red Seal Certification in Welding from SAIT</strong> and current <strong>CWB W47.1 qualifications in FCAW and SMAW</strong>, plus an <strong>ABSA Grade B Pressure Welder Certificate of Competency</strong>, with years of hands-on experience across structural steel, aluminum, and stainless. I'm fully equipped with my own tools for layout, fabrication, and finishing — from large structural builds to small detailed work — with reliable transportation to get wherever the job is.</p>
+        <p class="reveal">I hold a <strong>Red Seal Certification in Welding from SAIT</strong> and current <strong>CWB W47.1 qualifications in FCAW and SMAW</strong>, plus an <strong>ABSA Grade B Pressure Welder Certificate of Competency</strong>, with over a decade of hands-on experience across structural steel, aluminum, and stainless. I'm fully equipped with my own tools for layout, fabrication, and finishing — from large structural builds to small detailed work — with reliable transportation to get wherever the job is.</p>
         <p class="reveal">Available full-time: days, nights, and weekends. I bring a strong work ethic, real industry experience, and a genuine drive to help others level up in the trades.</p>
         <div class="certs reveal">
           <h3>CERTIFICATIONS</h3>
@@ -448,8 +533,11 @@ footer .wrap{display:contents;}
     <p class="label"><span class="idx">04</span> Contact</p>
     <a class="contact-big reveal" href="mailto:Jacoblangtoncooke@outlook.com">Let's build<br><span>something solid.</span></a>
     <div class="contact-meta reveal">
-      <p>Ready to discuss your next project? Email <strong>Jacoblangtoncooke@outlook.com</strong> — or find me below.</p>
+      <p>Ready to discuss your next project? Call or text <strong>403-828-8345</strong>, or email <strong>Jacoblangtoncooke@outlook.com</strong>.</p>
       <div class="socials">
+        <a class="sc-hot" href="tel:+14038288345">Call</a>
+        <a class="sc-hot" href="sms:+14038288345">Text</a>
+        <button class="sc-copy" id="copyEmail" type="button">Copy Email</button>
         <a href="https://www.linkedin.com/in/jacoblangtoncooke" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.instagram.com/jacoblangtoncookewelds" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -462,12 +550,15 @@ footer .wrap{display:contents;}
   <div class="wrap">
     <span>© 2026 Jacob Langton-Cooke</span>
     <span>Red Seal Welder — Alberta, Canada</span>
+    <a href="#top">Back to top &uarr;</a>
   </div>
 </footer>
 
 <!-- MODAL -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Image viewer">
   <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+  <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous project">&#8249;</button>
+  <button class="modal-nav modal-next" id="modalNext" aria-label="Next project">&#8250;</button>
   <img id="modalImg" src="" alt="">
   <p class="modal-caption" id="modalCaption"></p>
 </div>
@@ -478,6 +569,21 @@ footer .wrap{display:contents;}
 
   /* mark JS as active — enables scroll-reveal styling */
   document.documentElement.classList.add('js');
+
+  /* WebP support test — certs are swapped to .webp when available */
+  var webpOK=false;
+  try{webpOK=document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp')===0;}catch(err){}
+
+  /* mobile menu */
+  var navEl=document.getElementById('nav');
+  var navToggle=document.getElementById('navToggle');
+  navToggle.addEventListener('click',function(){
+    var open=navEl.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded',open);
+  });
+  document.querySelectorAll('.nav ul a').forEach(function(l){
+    l.addEventListener('click',function(){navEl.classList.remove('open');navToggle.setAttribute('aria-expanded','false');});
+  });
 
   /* nav background on scroll */
   var nav=document.getElementById('nav');
@@ -497,6 +603,30 @@ footer .wrap{display:contents;}
       l.classList.toggle('active',l.getAttribute('href')==='#'+current);
     });
   },{passive:true});
+
+  /* scroll progress bar */
+  var bar=document.getElementById('progress');
+  function updateBar(){
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(max>0?window.scrollY/max:0)+')';
+  }
+  window.addEventListener('scroll',updateBar,{passive:true});
+  window.addEventListener('resize',updateBar);
+  updateBar();
+
+  /* copy email */
+  var copyBtn=document.getElementById('copyEmail');
+  if(copyBtn&&navigator.clipboard){
+    copyBtn.addEventListener('click',function(){
+      navigator.clipboard.writeText('Jacoblangtoncooke@outlook.com').then(function(){
+        var t=copyBtn.textContent;
+        copyBtn.textContent='Copied';
+        setTimeout(function(){copyBtn.textContent=t;},1600);
+      });
+    });
+  }else if(copyBtn){
+    copyBtn.style.display='none';
+  }
 
   /* reveal on scroll */
   var reveals=document.querySelectorAll('.reveal');
@@ -534,21 +664,44 @@ footer .wrap{display:contents;}
     if(lastFocus){lastFocus.focus();}
   }
 
-  document.querySelectorAll('.card').forEach(function(card){
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var current=-1;
+  function showCard(i){
+    current=(i+cards.length)%cards.length;
+    var img=cards[current].querySelector('img');
+    modalImg.src=img.currentSrc||img.src;
+    modalImg.alt=img.alt;
+    modalCaption.textContent=cards[current].getAttribute('data-caption');
+  }
+  cards.forEach(function(card,i){
     card.addEventListener('click',function(){
       var img=card.querySelector('img');
-      openModal(img.src,img.alt,card.getAttribute('data-caption'));
+      current=i;
+      modal.classList.add('has-nav');
+      openModal(img.currentSrc||img.src,img.alt,card.getAttribute('data-caption'));
     });
   });
   document.querySelectorAll('.badge-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
-      openModal(btn.getAttribute('data-cert'),btn.getAttribute('data-caption'),btn.getAttribute('data-caption'));
+      current=-1;
+      modal.classList.remove('has-nav');
+      var src=btn.getAttribute('data-cert');
+      if(webpOK&&/\.jpg$/.test(src)){src=src.replace(/\.jpg$/,'.webp');}
+      openModal(src,btn.getAttribute('data-caption'),btn.getAttribute('data-caption'));
     });
+  });
+  document.getElementById('modalPrev').addEventListener('click',function(e){e.stopPropagation();if(current>=0){showCard(current-1);}});
+  document.getElementById('modalNext').addEventListener('click',function(e){e.stopPropagation();if(current>=0){showCard(current+1);}});
+  modalImg.addEventListener('error',function(){
+    if(/\.webp$/.test(modalImg.src)){modalImg.src=modalImg.src.replace(/\.webp$/,'.jpg');}
   });
   closeBtn.addEventListener('click',closeModal);
   modal.addEventListener('click',function(e){if(e.target===modal){closeModal();}});
   document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&modal.classList.contains('open')){closeModal();}
+    if(!modal.classList.contains('open')){return;}
+    if(e.key==='Escape'){closeModal();}
+    if(current>=0&&e.key==='ArrowLeft'){showCard(current-1);}
+    if(current>=0&&e.key==='ArrowRight'){showCard(current+1);}
   });
 })();
 </script>
